@@ -251,7 +251,7 @@
       
   - measure: count_orgs_submitting
     type: count_distinct
-    sql: ${TABLE}.organization_name
+    sql: ${organizations.name}
     filters:
       organization_name: "-NULL"
         

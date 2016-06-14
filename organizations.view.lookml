@@ -60,3 +60,15 @@
     type: count
     drill_fields: [id, name]
     
+  - dimension: count_tickets_submitted
+    type: number
+    sql: |
+        select 
+        count(${id}))
+        from zd_pipeline.tickets
+        
+  - measure: avg_tickets_submitted
+    type: avg
+    sql: ${count_tickets_submitted}
+            
+    

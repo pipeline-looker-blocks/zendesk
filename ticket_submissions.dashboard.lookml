@@ -7,7 +7,7 @@
 
   elements:
 
-  - name: add_a_unique_name_1465935898873
+  - name: all_tickets
     title: Untitled Visualization
     type: single_value
     model: zendesk
@@ -17,5 +17,16 @@
     limit: 500
     show_single_value_title: true
     single_value_title: All time tickets submitted
+    show_comparison: false
+  - name: orgs_submitting
+    title: Untitled Visualization
+    type: single_value
+    model: zendesk
+    explore: tickets
+    measures: [tickets.count_orgs_submitting]
+    sorts: [tickets.count_orgs_submitting desc]
+    limit: 500
+    show_single_value_title: true
+    single_value_title: Organizations submitting tickets
     show_comparison: false
 
