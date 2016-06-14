@@ -81,6 +81,10 @@
     type: number
     value_format_name: id
     sql: ${TABLE}.organization_id
+    
+  - dimension: organization_name
+    type: string
+    sql: ${organizations.name}
 
 #   - dimension: priority  ## include only if your Zendesk application utilizes the priority field
 #     type: string
