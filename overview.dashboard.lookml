@@ -1,13 +1,19 @@
 - dashboard: overview
   title: Overview
-  layout: tile
-  tile_size: 100
+  layout: grid
+  rows:
+    - elements: [new_open_tickets, pending_tickets, closed_tickets]
+      height: 150
+    - elements: [tickets_by_channel]
+      height: 300
+    - elements: [top_orgs, top_requesters, top_assignees]
+      height: 300
 
 #  filters:
 
   elements:
 
-  - name: add_a_unique_name_1465931582322
+  - name: new_open_tickets
     type: single_value
     model: zendesk
     explore: tickets
@@ -19,7 +25,7 @@
     show_single_value_title: true
     single_value_title: New and open tickets
     show_comparison: false
-  - name: add_a_unique_name_1465931953284
+  - name: pending_tickets
     title: Untitled Visualization
     type: single_value
     model: zendesk
@@ -33,7 +39,7 @@
     show_single_value_title: true
     single_value_title: Pending tickets
     show_comparison: false
-  - name: add_a_unique_name_1465932070514
+  - name: closed_tickets
     title: Untitled Visualization
     type: single_value
     model: zendesk
@@ -46,7 +52,7 @@
     show_single_value_title: true
     single_value_title: Closed and solved tickets
     show_comparison: false
-  - name: add_a_unique_name_1465932151682
+  - name: tickets_by_channel
     title: Untitled Visualization
     type: looker_pie
     model: zendesk
@@ -59,7 +65,7 @@
     colors: ['#62bad4', '#a9c574', '#929292', '#9fdee0', '#1f3e5a', '#90c8ae', '#92818d',
       '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
     show_view_names: true
-  - name: add_a_unique_name_1465934981106
+  - name: top_orgs
     title: Top 20 organizations by tickets submitted
     type: table
     model: zendesk
@@ -73,7 +79,7 @@
     truncate_column_names: false
     table_theme: editable
     limit_displayed_rows: false
-  - name: add_a_unique_name_1465935095065
+  - name: top_requesters
     title: Top 20 requesters by tickets submitted
     type: table
     model: zendesk
@@ -87,7 +93,7 @@
     truncate_column_names: false
     table_theme: editable
     limit_displayed_rows: false
-  - name: add_a_unique_name_1465935177503
+  - name: top_assignees
     title: Top 20 agents by all time tickets
     type: table
     model: zendesk
