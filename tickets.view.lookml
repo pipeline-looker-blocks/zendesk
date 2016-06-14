@@ -248,6 +248,11 @@
     type: count
     filters: 
       is_solved: 'Yes'
+      
+  - measure: count_orgs_submitting
+    type: count
+    filters:
+      organization_name: "-NULL"
         
 ############ TIME FIELDS ###########
 
