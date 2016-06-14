@@ -64,7 +64,7 @@
     type: number
     sql: |
         select 
-        count(${id}))
+        count(${id})
         from zd_pipeline.tickets
         
   - measure: avg_tickets_submitted
