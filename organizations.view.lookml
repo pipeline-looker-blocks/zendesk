@@ -60,7 +60,7 @@
     type: count
     drill_fields: [id, name]
     
-  - dimension: count_tickets_submitted
+  - measure: count_tickets_submitted
     type: number
     sql: |
         select 
