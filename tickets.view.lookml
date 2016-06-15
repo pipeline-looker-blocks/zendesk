@@ -39,7 +39,7 @@
   - dimension_group: created_at
     type: time
     timeframes: [time, date, week, month]
-    sql: ${TABLE}.created_at
+    sql: ${TABLE}.created_at::timestamp
     
   - dimension: max_audit_created_at
     type: time
