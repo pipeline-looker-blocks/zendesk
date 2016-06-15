@@ -63,6 +63,8 @@
 
 - explore: audits__via__source__from__ticket_ids
 
+- explore: average_tickets_per_org
+
 - explore: organizations
 
 - explore: organizations__domain_names

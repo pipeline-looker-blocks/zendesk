@@ -8,7 +8,6 @@
   elements:
 
   - name: all_tickets
-    title: Untitled Visualization
     type: single_value
     model: zendesk
     explore: tickets
@@ -19,7 +18,6 @@
     single_value_title: All time tickets submitted
     show_comparison: false
   - name: orgs_submitting
-    title: Untitled Visualization
     type: single_value
     model: zendesk
     explore: tickets
@@ -29,4 +27,13 @@
     show_single_value_title: true
     single_value_title: Organizations submitting tickets
     show_comparison: false
-
+  - name: avg_tickets_per_org
+    type: single_value
+    model: zendesk
+    explore: average_tickets_per_org
+    measures: [average_tickets_per_org.avg_tix_per_org]
+    sorts: [average_tickets_per_org.avg_tix_per_org desc]
+    limit: 500
+    show_single_value_title: true
+    single_value_title: Average number of tickets submitted per organization
+    show_comparison: false
