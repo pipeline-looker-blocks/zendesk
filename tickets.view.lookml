@@ -229,7 +229,7 @@
         ELSE 'Other'
         END
     
-  - measure: count_backlogged_tickets
+  - measure: count_pending_tickets
     type: count
     filters: 
       is_backlogged: 'Yes'

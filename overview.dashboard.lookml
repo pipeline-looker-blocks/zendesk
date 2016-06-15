@@ -28,7 +28,7 @@
     single_value_title: New and open tickets
     show_comparison: false
   - name: pending_tickets
-    title: Untitled Visualization
+    title: Pending tickets
     type: single_value
     model: zendesk
     explore: tickets
@@ -55,7 +55,7 @@
     single_value_title: Closed and solved tickets
     show_comparison: false
   - name: tickets_by_channel
-    title: Untitled Visualization
+    title: Tickets submitted by channel
     type: looker_pie
     model: zendesk
     explore: tickets
@@ -100,7 +100,7 @@
     model: zendesk
     explore: tickets
     measures: [tickets.count_solved_tickets, tickets.count_new_tickets, tickets.count_open_tickets,
-      tickets.count_backlogged_tickets]
+      tickets.count_pending_tickets]
     sorts: [tickets.count_solved_tickets desc]
     limit: 500
     stacking: ''
