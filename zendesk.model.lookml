@@ -47,29 +47,17 @@
 
 - explore: audits__events__attachments
 
-- explore: audits__events__attachments__thumbnails
-
 - explore: audits__events__previous_value
 
 - explore: audits__events__recipients
 
 - explore: audits__events__value
 
-- explore: audits__metadata__flags
-
-- explore: audits__metadata__notifications_suppressed_for
-
-- explore: audits__via__source__from__original_recipients
-
-- explore: audits__via__source__from__ticket_ids
-
 - explore: average_tickets_per_org
 
 - explore: organizations
 
 - explore: organizations__domain_names
-
-- explore: response_and_resolution_time
 
 - explore: ticket_fields
 
@@ -96,11 +84,6 @@
       sql_on: ${tickets.assignee_id} = ${assignees.id}
       relationship: many_to_one
       
-    - join: response_and_resolution_time
-      type: inner
-      sql_on: ${tickets.id} = ${response_and_resolution_time.ticket_id}
-      relationship: one_to_one
-      
     - join: zendesk_groups
       type: left_outer 
       sql_on: ${tickets.group_id} = ${zendesk_groups.id}
@@ -113,8 +96,6 @@
 - explore: tickets__fields
 
 - explore: tickets__followup_ids
-
-- explore: tickets__sharing_agreement_ids
 
 - explore: tickets__tags
 
