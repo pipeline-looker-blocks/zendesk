@@ -2,7 +2,7 @@
   title: Agent Performance
   layout: grid
   rows:
-    - elements: [avg_resolution_time, average_response_time, tickets_solved]
+    - elements: [average_response_time, avg_resolution_time, tickets_solved]
       height: 150
     - elements: [performance_over_time]
       height: 300
