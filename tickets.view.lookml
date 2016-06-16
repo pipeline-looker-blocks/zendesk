@@ -40,11 +40,6 @@
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.created_at::timestamp
-    
-  - dimension: max_audit_created_at
-    type: time
-    timeframes: [time,date,week,month]
-    sql: MAX($audit__events.created_at)
 
 ## KEEP?
 #   - dimension: generated_timestamp
