@@ -24,6 +24,14 @@
     timeframes: [time, date, week, month]
     sql: ${TABLE}.assigned_at
 
+  - dimension: assignee_id
+    type: number
+    sql: ${tickets.assignee_id}
+    
+  - dimension: assignee_email
+    type: string
+    sql: ${users.email}
+
   - dimension: assignee_stations
     type: number
     sql: ${TABLE}.assignee_stations
@@ -37,22 +45,108 @@
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.created_at
+    
+# MINUTES
 
   - dimension: first_resolution_time_in_minutes__business
     type: number
+    sql: ${TABLE}.first_resolution_time_in_minutes__business
+    
+  - measure: avg_first_resolution_time_in_minutes__business
+    type: avg
     sql: ${TABLE}.first_resolution_time_in_minutes__business
 
   - dimension: first_resolution_time_in_minutes__calendar
     type: number
     sql: ${TABLE}.first_resolution_time_in_minutes__calendar
+    
+  - measure: avg_first_resolution_time_in_minutes__calendar
+    type: avg
+    sql: ${TABLE}.first_resolution_time_in_minutes__calendar
 
   - dimension: full_resolution_time_in_minutes__business
     type: number
+    sql: ${TABLE}.full_resolution_time_in_minutes__business
+    
+  - measure: avg_full_resolution_time_in_minutes__business
+    type: avg
     sql: ${TABLE}.full_resolution_time_in_minutes__business
 
   - dimension: full_resolution_time_in_minutes__calendar
     type: number
     sql: ${TABLE}.full_resolution_time_in_minutes__calendar
+    
+  - measure: avg_full_resolution_time_in_minutes__calendar
+    type: avg
+    sql: ${TABLE}.full_resolution_time_in_minutes__calendar
+    
+# HOURS
+    
+  - dimension: first_resolution_time_in_hours__business
+    type: number
+    sql: ${TABLE}.first_resolution_time_in_minutes__business / 60
+    
+  - measure: avg_first_resolution_time_in_hours__business
+    type: avg
+    sql: ${TABLE}.first_resolution_time_in_hours__business
+
+  - dimension: first_resolution_time_in_hours__calendar
+    type: number
+    sql: ${TABLE}.first_resolution_time_in_minutes__calendar / 60
+    
+  - measure: avg_first_resolution_time_in_hours__calendar
+    type: avg
+    sql: ${TABLE}.first_resolution_time_in_hours__calendar
+
+  - dimension: full_resolution_time_in_hours__business
+    type: number
+    sql: ${TABLE}.full_resolution_time_in_minutes__business / 60
+    
+  - measure: avg_full_resolution_time_in_hours__business
+    type: avg
+    sql: ${TABLE}.full_resolution_time_in_hours__business
+
+  - dimension: full_resolution_time_in_hours__calendar
+    type: number
+    sql: ${TABLE}.full_resolution_time_in_minutes__calendar / 60
+    
+  - measure: avg_full_resolution_time_in_hours__calendar
+    type: avg
+    sql: ${TABLE}.full_resolution_time_in_minutes__calendar
+    
+# DAYS
+    
+  - dimension: first_resolution_time_in_days__business
+    type: number
+    sql: ${TABLE}.first_resolution_time_in_minutes__business / 480
+    
+  - measure: avg_first_resolution_time_in_days__business
+    type: avg
+    sql: ${TABLE}.first_resolution_time_in_days__business
+
+  - dimension: first_resolution_time_in_days__calendar
+    type: number
+    sql: ${TABLE}.first_resolution_time_in_minutes__calendar / 1440
+    
+  - measure: avg_first_resolution_time_in_days__calendar
+    type: avg
+    sql: ${TABLE}.first_resolution_time_in_days__calendar
+
+  - dimension: full_resolution_time_in_days__business
+    type: number
+    sql: ${TABLE}.full_resolution_time_in_minutes__business / 480
+    
+  - measure: avg_full_resolution_time_in_days__business
+    type: avg
+    sql: ${TABLE}.full_resolution_time_in_days__business
+
+  - dimension: full_resolution_time_in_days__calendar
+    type: number
+    sql: ${TABLE}.full_resolution_time_in_minutes__calendar / 1440
+    
+  - measure: avg_full_resolution_time_in_days__calendar
+    type: avg
+    sql: ${TABLE}.full_resolution_time_in_days__calendar
 
   - dimension: group_stations
     type: number
