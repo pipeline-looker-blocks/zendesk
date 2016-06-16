@@ -4,7 +4,7 @@
   rows:
     - elements: [new_open_tickets, pending_tickets, closed_tickets]
       height: 150
-    - elements: [ticket_count]
+    - elements: [tickets_and_orgs]
       height: 400
     - elements: [tickets_by_channel, count_by_status]
       height: 400
@@ -67,13 +67,13 @@
     colors: ['#62bad4', '#a9c574', '#929292', '#9fdee0', '#1f3e5a', '#90c8ae', '#92818d',
       '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
     show_view_names: true
-  - name: ticket_count
+  - name: tickets_and_orgs
     title: Ticket submissions over time
     type: looker_line
     model: zendesk
     explore: tickets
     dimensions: [tickets.created_at_week]
-    measures: [tickets.count]
+    measures: [tickets.count, tickets.count_distinct_organizations]
     sorts: [tickets.created_at_week desc]
     limit: 500
     stacking: ''
@@ -92,6 +92,7 @@
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear
+    show_null_points: true
     point_style: none
     interpolation: linear
   - name: count_by_status
