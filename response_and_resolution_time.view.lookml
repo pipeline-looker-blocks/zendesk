@@ -84,7 +84,7 @@
     
   - dimension: ticket_id
     type: number
-    sql: ${TABLE}.ticket_id
+    sql: ${TABLE}.id
 
   - dimension: time_to_first_response_hr
     type: number
