@@ -54,7 +54,7 @@
     measures: [tickets.count_new_tickets, tickets.count_open_tickets, tickets.count_pending_tickets,
       tickets.count_solved_tickets, tickets.count, response_and_resolution_time.avg_days_to_resolution]
     sorts: [response_and_resolution_time.avg_days_to_resolution]
-    limit: 500
+    limit: 300
     show_view_names: true
     show_row_numbers: true
     truncate_column_names: false
