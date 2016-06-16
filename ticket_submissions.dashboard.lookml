@@ -89,7 +89,7 @@
     ordering: none
     show_null_labels: false
   - name: peak_hours
-    title: peak_hours
+    title: Peak hours
     type: looker_column
     model: zendesk
     explore: tickets
