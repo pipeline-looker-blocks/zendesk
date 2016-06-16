@@ -133,7 +133,7 @@
 - explore: zendesk_ticket_metrics
   fields: [
     ALL_FIELDS*,
-    -tickets.requester_email,
+    -tickets.requester_email, 
     -tickets.assignee_email
     ]
   joins:
@@ -145,5 +145,10 @@
     - join: organizations
       type: left_outer 
       sql_on: ${tickets.organization_id} = ${organizations.id}
+      relationship: many_to_one
+      
+    - join: users
+      type: left_outer
+      sql_on: ${tickets.assignee_id} = ${users.id}
       relationship: many_to_one
 
