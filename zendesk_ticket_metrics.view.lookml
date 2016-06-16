@@ -54,7 +54,7 @@
     
   - measure: avg_first_resolution_time_in_minutes__business
     type: avg
-    sql: ${TABLE}.first_resolution_time_in_minutes__business
+    sql: ${first_resolution_time_in_minutes__business}
 
   - dimension: first_resolution_time_in_minutes__calendar
     type: number
@@ -62,7 +62,7 @@
     
   - measure: avg_first_resolution_time_in_minutes__calendar
     type: avg
-    sql: ${TABLE}.first_resolution_time_in_minutes__calendar
+    sql: ${first_resolution_time_in_minutes__calendar}
 
   - dimension: full_resolution_time_in_minutes__business
     type: number
@@ -70,7 +70,7 @@
     
   - measure: avg_full_resolution_time_in_minutes__business
     type: avg
-    sql: ${TABLE}.full_resolution_time_in_minutes__business
+    sql: ${full_resolution_time_in_minutes__business}
 
   - dimension: full_resolution_time_in_minutes__calendar
     type: number
@@ -78,7 +78,7 @@
     
   - measure: avg_full_resolution_time_in_minutes__calendar
     type: avg
-    sql: ${TABLE}.full_resolution_time_in_minutes__calendar
+    sql: ${full_resolution_time_in_minutes__calendar}
     
 # HOURS
     
@@ -88,7 +88,7 @@
     
   - measure: avg_first_resolution_time_in_hours__business
     type: avg
-    sql: ${TABLE}.first_resolution_time_in_hours__business
+    sql: ${first_resolution_time_in_hours__business}
 
   - dimension: first_resolution_time_in_hours__calendar
     type: number
@@ -96,7 +96,7 @@
     
   - measure: avg_first_resolution_time_in_hours__calendar
     type: avg
-    sql: ${TABLE}.first_resolution_time_in_hours__calendar
+    sql: ${first_resolution_time_in_hours__calendar}
 
   - dimension: full_resolution_time_in_hours__business
     type: number
@@ -104,7 +104,7 @@
     
   - measure: avg_full_resolution_time_in_hours__business
     type: avg
-    sql: ${TABLE}.full_resolution_time_in_hours__business
+    sql: ${full_resolution_time_in_hours__business}
 
   - dimension: full_resolution_time_in_hours__calendar
     type: number
@@ -112,7 +112,7 @@
     
   - measure: avg_full_resolution_time_in_hours__calendar
     type: avg
-    sql: ${TABLE}.full_resolution_time_in_minutes__calendar
+    sql: ${full_resolution_time_in_minutes__calendar}
     
 # DAYS
     
@@ -122,7 +122,7 @@
     
   - measure: avg_first_resolution_time_in_days__business
     type: avg
-    sql: ${TABLE}.first_resolution_time_in_days__business
+    sql: ${first_resolution_time_in_days__business}
 
   - dimension: first_resolution_time_in_days__calendar
     type: number
@@ -130,7 +130,7 @@
     
   - measure: avg_first_resolution_time_in_days__calendar
     type: avg
-    sql: ${TABLE}.first_resolution_time_in_days__calendar
+    sql: ${first_resolution_time_in_days__calendar}
 
   - dimension: full_resolution_time_in_days__business
     type: number
@@ -138,7 +138,7 @@
     
   - measure: avg_full_resolution_time_in_days__business
     type: avg
-    sql: ${TABLE}.full_resolution_time_in_days__business
+    sql: ${full_resolution_time_in_days__business}
 
   - dimension: full_resolution_time_in_days__calendar
     type: number
@@ -146,7 +146,7 @@
     
   - measure: avg_full_resolution_time_in_days__calendar
     type: avg
-    sql: ${TABLE}.full_resolution_time_in_days__calendar
+    sql: ${full_resolution_time_in_days__calendar}
 
   - dimension: group_stations
     type: number
