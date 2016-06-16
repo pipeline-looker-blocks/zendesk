@@ -5,7 +5,7 @@
     - elements: [all_tickets, orgs_submitting, avg_tickets_per_org]
       height: 150
     - elements: [tickets_submitted_by_org]
-      height: 400
+      height: 600
     - elements: [ticket_stats_by_org]
       height: 400
     - elements: [peak_hours, peak_days]
