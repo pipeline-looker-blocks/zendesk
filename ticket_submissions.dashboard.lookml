@@ -43,7 +43,7 @@
     sorts: [average_tickets_per_org.avg_tix_per_org desc]
     limit: 500
     show_single_value_title: true
-    single_value_title: Average number of tickets submitted per organization
+    single_value_title: Avg. number of tickets submitted per organization
     show_comparison: false
   - name: ticket_stats_by_org
     title: Ticket stats by organization
