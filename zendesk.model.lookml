@@ -69,6 +69,8 @@
 
 - explore: organizations__domain_names
 
+- explore: response_and_resolution_time
+
 - explore: ticket_fields
 
 - explore: ticket_fields__custom_field_options
@@ -93,6 +95,11 @@
       type: left_outer 
       sql_on: ${tickets.assignee_id} = ${assignees.id}
       relationship: many_to_one
+      
+    - join: response_and_resolution_time
+      type: inner
+      sql_on: ${tickets.id} = ${response_and_resolution_time.ticket_id}
+      relationship: one_to_one
 
 - explore: tickets__collaborator_ids
 
