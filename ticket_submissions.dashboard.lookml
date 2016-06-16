@@ -5,9 +5,9 @@
     - elements: [all_tickets, orgs_submitting, avg_tickets_per_org]
       height: 150
     - elements: [tickets_submitted_by_org]
-      height: 300
+      height: 500
     - elements: [ticket_stats_by_org]
-      height: 300
+      height: 500
     - elements: [peak_hours, peak_days]
       height: 300
 
@@ -69,7 +69,7 @@
     pivots: [tickets.organization_name]
     measures: [tickets.count]
     sorts: [tickets.count desc, tickets.organization_name]
-    limit: 500
+    limit: 10000
     column_limit: 50
     stacking: percent
     show_value_labels: false
@@ -89,11 +89,13 @@
     ordering: none
     show_null_labels: false
   - name: peak_hours
-    title: Peak hours
+    title: peak_hours
     type: looker_column
     model: zendesk
     explore: tickets
+    dimensions: [tickets.time_hour_of_day]
     measures: [tickets.count]
+    sorts: [tickets.time_hour_of_day]
     limit: 500
     column_limit: 50
     stacking: percent
