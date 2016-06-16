@@ -178,13 +178,15 @@
     type: number
     sql: ${TABLE}.replies
 
+# FIRST REPLY MINUTES
+
   - dimension: reply_time_in_minutes__business
     type: number
     sql: ${TABLE}.reply_time_in_minutes__business
     
   - measure: avg_reply_time_in_minutes__business
     type: avg
-    sql: ${reply_time_in_minutes__business  }
+    sql: ${reply_time_in_minutes__business}
 
   - dimension: reply_time_in_minutes__calendar
     type: number
@@ -193,6 +195,24 @@
   - measure: avg_reply_time_in_minutes__calendar
     type: avg
     sql: ${reply_time_in_minutes__calendar}
+    
+# FIRST REPLY HOURS
+
+  - dimension: reply_time_in_hours__business
+    type: number
+    sql: ${TABLE}.reply_time_in_minutes__business / 60
+    
+  - measure: avg_reply_time_in_hours__business
+    type: avg
+    sql: ${reply_time_in_hours__business}
+
+  - dimension: reply_time_in_hours__calendar
+    type: number
+    sql: ${TABLE}.reply_time_in_minutes__calendar / 60
+    
+  - measure: avg_reply_time_in_hours__calendar
+    type: avg
+    sql: ${reply_time_in_hours__calendar}
 
   - dimension_group: requester_updated
     type: time
