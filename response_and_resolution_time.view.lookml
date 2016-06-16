@@ -36,7 +36,7 @@
         
       select
        t.created_at, 
-       t.ticket_id,
+       t.id,
        c.first_response,
        s.resolution_date, 
        datediff('hour', t.created_at, c.first_response) time_to_first_response_hr, 
