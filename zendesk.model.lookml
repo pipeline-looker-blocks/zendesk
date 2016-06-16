@@ -31,12 +31,12 @@
   joins:
     - join: audits
       type: left_outer 
-      sql_on: ${audits__events.audit_id} = ${audits.id}
+      sql_on: ${audits__events._rjm_source_key_id} = ${audits.id}
       relationship: many_to_one
 
     - join: tickets
       type: left_outer 
-      sql_on: ${audits.ticket_id} = ${tickets.via__source__from__ticket_id}
+      sql_on: ${audits.ticket_id} = ${tickets.id}
       relationship: many_to_one
 
     - join: organizations
