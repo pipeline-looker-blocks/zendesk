@@ -52,4 +52,33 @@
     truncate_column_names: false
     table_theme: editable
     limit_displayed_rows: false
+  - name: tickets_submitted_by_org
+    title: Tickets submitted by organization
+    type: looker_column
+    model: zendesk
+    explore: tickets
+    dimensions: [tickets.created_at_month, tickets.organization_name]
+    pivots: [tickets.organization_name]
+    measures: [tickets.count]
+    sorts: [tickets.count desc, tickets.organization_name]
+    limit: 500
+    column_limit: 50
+    stacking: percent
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: time
+    ordering: none
+    show_null_labels: false
+
 
