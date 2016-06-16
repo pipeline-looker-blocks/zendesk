@@ -52,6 +52,22 @@
   - measure: count
     type: count
     drill_fields: detail*
+    
+  - measure: avg_hours_to_first_response
+    type: avg
+    sql: ${TABLE}.time_to_first_response_hr
+    
+  - measure: avg_hours_to_resolution
+    type: avg
+    sql: ${TABLE}.time_to_resolution_hr
+    
+  - measure: avg_days_to_first_response
+    type: avg
+    sql: ${TABLE}.time_to_first_response_day
+    
+  - measure: avg_days_to_resolution
+    type: avg
+    sql: ${TABLE}.time_to_resolution_day
 
   - dimension_group: created_at
     type: time
