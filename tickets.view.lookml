@@ -244,6 +244,10 @@
     filters: 
       is_solved: 'Yes'
       
+  - measure: count_distinct_organizations
+    type: count_distinct
+    sql: ${organization_id}
+      
   - measure: count_orgs_submitting
     type: count_distinct
     sql: ${organizations.name}
