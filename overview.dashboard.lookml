@@ -5,11 +5,11 @@
     - elements: [new_open_tickets, pending_tickets, closed_tickets]
       height: 150
     - elements: [ticket_count]
-      height: 300
+      height: 400
     - elements: [tickets_by_channel, count_by_status]
-      height: 300
+      height: 400
     - elements: [top_orgs, top_requesters, top_assignees]
-      height: 300
+      height: 400
 
 #  filters:
 

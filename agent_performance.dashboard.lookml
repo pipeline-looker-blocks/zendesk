@@ -5,11 +5,11 @@
     - elements: [average_response_time, avg_resolution_time, tickets_solved]
       height: 150
     - elements: [performance_over_time]
-      height: 300
+      height: 400
     - elements: [performance_by_group]
-      height: 300
+      height: 400
     - elements: [performance_by_agent]
-      height: 300
+      height: 400
 
 #  filters:
 
