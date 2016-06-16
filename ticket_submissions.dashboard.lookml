@@ -1,7 +1,15 @@
 - dashboard: ticket_submissions
   title: Ticket Submissions
-  layout: tile
-  tile_size: 100
+  layout: grid
+  rows:
+    - elements: [all_tickets, orgs_submitting, avg_tickets_per_org]
+      height: 150
+    - elements: [tickets_submitted_by_org]
+      height: 300
+    - elements: [ticket_stats_by_org]
+      height: 300
+    - elements: [peak_hours, peak_days]
+      height: 300
 
 #  filters:
 
@@ -80,5 +88,59 @@
     x_axis_scale: time
     ordering: none
     show_null_labels: false
+  - name: peak_hours
+    title: Peak hours
+    type: looker_column
+    model: zendesk
+    explore: tickets
+    measures: [tickets.count]
+    limit: 500
+    column_limit: 50
+    stacking: percent
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    ordering: none
+    show_null_labels: false
+  - name: peak_days
+    title: Peak days
+    type: looker_column
+    model: zendesk
+    explore: tickets
+    dimensions: [tickets.time_day_of_week]
+    measures: [tickets.count]
+    sorts: [tickets.time_day_of_week]
+    limit: 500
+    column_limit: 50
+    stacking: percent
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    ordering: none
+    show_null_labels: false
+    
+
 
 
