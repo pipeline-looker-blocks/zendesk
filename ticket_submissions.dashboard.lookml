@@ -49,17 +49,12 @@
     title: Ticket stats by organization
     type: table
     model: zendesk
-    explore: tickets
-    dimensions: [tickets.organization_name]
+    explore: zendesk_ticket_metrics
+    dimensions: [organizations.name]
     measures: [tickets.count_new_tickets, tickets.count_open_tickets, tickets.count_pending_tickets,
-      tickets.count_solved_tickets, tickets.count, response_and_resolution_time.avg_days_to_resolution]
-    sorts: [response_and_resolution_time.avg_days_to_resolution]
-    limit: 300
-    show_view_names: true
-    show_row_numbers: true
-    truncate_column_names: false
-    table_theme: editable
-    limit_displayed_rows: false
+      tickets.count_solved_tickets, tickets.count, zendesk_ticket_metrics.avg_full_resolution_time_in_days__business]
+    sorts: [tickets.count_new_tickets desc]
+    limit: 500
   - name: tickets_submitted_by_org
     title: Tickets submitted by organization
     type: looker_column
