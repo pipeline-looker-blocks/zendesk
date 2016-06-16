@@ -84,7 +84,7 @@
     
   - dimension: first_resolution_time_in_hours__business
     type: number
-    sql: ${TABLE}.first_resolution_time_in_minutes__business / 60
+    sql: (${TABLE}.first_resolution_time_in_minutes__business / 60)
     
   - measure: avg_first_resolution_time_in_hours__business
     type: avg
