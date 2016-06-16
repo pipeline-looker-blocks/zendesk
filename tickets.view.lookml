@@ -255,8 +255,8 @@
   - dimension_group: hidden_created
     hidden: true
     type: time
-    timeframes: [day_of_week_index]  ###   use day_of_week
-    sql: ${TABLE}.created_at
+    timeframes: [day_of_week]  ###   use day_of_week
+    sql: ${TABLE}.created_at::timestamp
   
   - dimension: created_day_of_week   
     sql_case:
@@ -271,7 +271,7 @@
   - dimension_group: time
     type: time
     timeframes: [hour_of_day]
-    sql: ${TABLE}.created_at
+    sql: ${TABLE}.created_at::timestamp
 
 ### REVIEW
 #   - dimension: satisfaction_rating_percent_tier
