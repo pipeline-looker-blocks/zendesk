@@ -36,6 +36,7 @@
         
       select
        t.created_at, 
+       t.ticket_id,
        c.first_response,
        s.resolution_date, 
        datediff('hour', t.created_at, c.first_response) time_to_first_response_hr, 
@@ -80,6 +81,10 @@
   - dimension_group: resolution_date
     type: time
     sql: ${TABLE}.resolution_date
+    
+  - dimension: ticket_id
+    type: number
+    sql: ${TABLE}.ticket_id
 
   - dimension: time_to_first_response_hr
     type: number
