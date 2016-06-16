@@ -35,8 +35,10 @@
       ) 
         
       select
-       t.created_at, 
        t.id,
+       t.created_at, 
+       u.email assignee_email,
+       u.id assignee_id,
        c.first_response,
        s.resolution_date, 
        datediff('hour', t.created_at, c.first_response) time_to_first_response_hr, 
@@ -48,6 +50,8 @@
       on t.id = s.ticket_id
       left join min_admin_comment c
       on t.id = c.ticket_id
+      left join zd_pipeline.users u
+      on t.assignee_id = u.id
 
   fields:
   - measure: count
@@ -69,6 +73,10 @@
   - measure: avg_days_to_resolution
     type: avg
     sql: ${TABLE}.time_to_resolution_day
+    
+  - dimension: assignee_email
+    type: string
+    sql: ${TABLE}.assignee_email
 
   - dimension_group: created_at
     type: time
