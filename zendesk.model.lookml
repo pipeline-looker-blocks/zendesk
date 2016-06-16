@@ -100,6 +100,11 @@
       type: inner
       sql_on: ${tickets.id} = ${response_and_resolution_time.ticket_id}
       relationship: one_to_one
+      
+    - join: zendesk_groups
+      type: left_outer 
+      sql_on: ${tickets.group_id} = ${zendesk_groups.id}
+      relationship: many_to_one
 
 - explore: tickets__collaborator_ids
 
@@ -150,5 +155,10 @@
     - join: users
       type: left_outer
       sql_on: ${tickets.assignee_id} = ${users.id}
+      relationship: many_to_one
+      
+    - join: zendesk_groups
+      type: left_outer
+      sql_on: ${tickets.group_id} = ${zendesk_groups.id}
       relationship: many_to_one
 

@@ -31,6 +31,10 @@
   - dimension: assignee_email
     type: string
     sql: ${users.email}
+    
+  - dimension: group_name
+    type: string
+    sql: ${zendesk_groups.name}
 
   - dimension: assignee_stations
     type: number
