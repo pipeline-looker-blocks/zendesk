@@ -258,7 +258,7 @@
 
   - dimension_group: time
     type: time
-    timeframes: [day_of_week]  ###   use day_of_week
+    timeframes: [day_of_week, hour_of_day]  ###   use day_of_week
     sql: ${TABLE}.created_at::timestamp
   
 #   - dimension: created_day_of_week   
@@ -271,11 +271,6 @@
 #       Friday:    ${hidden_created_day_of_week_index} = 4
 #       Saturday:  ${hidden_created_day_of_week_index} = 5
     
-  - dimension_group: time
-    type: time
-    timeframes: [hour_of_day]
-    sql: ${TABLE}.created_at::timestamp
-
 ### REVIEW
 #   - dimension: satisfaction_rating_percent_tier
 #     type: tier
