@@ -7,15 +7,6 @@
     primary_key: true
     type: number
     sql: ${TABLE}.id
-
-# KEEP?
-  - dimension: via__source__from__ticket_id
-    type: number
-    sql: ${TABLE}.via__source__from__ticket_id
-
-  - dimension: allow_channelback
-    type: yesno
-    sql: ${TABLE}.allow_channelback
     
   - dimension: assignee_email
     description: the requester is the customer who initiated the ticket. the email is retrieved from the `users` table.
@@ -30,47 +21,16 @@
 #     value_format_name: id                ## only associated with Zendesk Enterprise Accounts
 #     type: number
 #     sql: ${TABLE}.brand_id
-  
-## EXISTS IN LOOKER BLOCK BUT NOT HERE    
-#   - dimension: bug
-#     type: yesno
-#     sql: ${TABLE}.bug
 
   - dimension_group: created_at
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.created_at::timestamp
 
-## KEEP?
-#   - dimension: generated_timestamp
-#     type: number
-#     sql: ${TABLE}.generated_timestamp
-
-## EXISTS IN LOOKER BLOCK BUT NOT HERE    
-#   - dimension: description
-#     sql: ${TABLE}.description
-# 
-#   - dimension_group: due
-#     type: time
-#     timeframes: [time, date, week, month]
-#     sql: ${TABLE}.due_at
-# 
-#   - dimension: external_id
-#     sql: ${TABLE}.external_id
-# 
-#   - dimension: forum_topic_id
-#     type: number
-#     value_format_name: id
-#     sql: ${TABLE}.forum_topic_id
-
   - dimension: group_id
     type: number
     value_format_name: id
     sql: ${TABLE}.group_id
-
-  - dimension: has_incidents
-    type: yesno
-    sql: ${TABLE}.has_incidents
 
   - dimension: organization_id
     type: number
@@ -80,14 +40,6 @@
   - dimension: organization_name
     type: string
     sql: ${organizations.name}
-
-#   - dimension: priority  ## include only if your Zendesk application utilizes the priority field
-#     type: string
-#     sql: ${TABLE}.priority
-
-  - dimension: raw_subject
-    type: string
-    sql: ${TABLE}.raw_subject
 
   - dimension: recipient
     type: string
@@ -103,32 +55,17 @@
     value_format_name: id
     sql: ${TABLE}.requester_id
 
-## EXISTS IN LOOKER BLOCK BUT NOT HERE
-#   - dimension: requester_locale_id
-#     type: number
-#     value_format_name: id
-#     sql: ${TABLE}.requester_locale_id
-# 
-#   - dimension: requester_name
-#     description: the requester is the customer who initiated the ticket
-#     sql: ${TABLE}.requester_name
-
-## KEEP?
-#   - dimension: result_type
+#   - dimension: satisfaction_rating__comment
 #     type: string
-#     sql: ${TABLE}.result_type
-
-  - dimension: satisfaction_rating__comment
-    type: string
-    sql: ${TABLE}.satisfaction_rating__comment
-
-  - dimension: satisfaction_rating__id
-    type: number
-    sql: ${TABLE}.satisfaction_rating__id
-
-  - dimension: satisfaction_rating__score
-    type: string
-    sql: ${TABLE}.satisfaction_rating__score
+#     sql: ${TABLE}.satisfaction_rating__comment
+# 
+#   - dimension: satisfaction_rating__id
+#     type: number
+#     sql: ${TABLE}.satisfaction_rating__id
+# 
+#   - dimension: satisfaction_rating__score
+#     type: string
+#     sql: ${TABLE}.satisfaction_rating__score
 
   - dimension: status
     type: string
@@ -144,52 +81,13 @@
     value_format_name: id               
     sql: ${TABLE}.submitter_id
 
-## EXISTS IN LOOKER BLOCK BUT NOT HERE
-#   - dimension: ticket_form_id
-#     type: number
-#     value_format_name: id
-#     sql: ${TABLE}.ticket_form_id
-
   - dimension: type
     type: string
     sql: ${TABLE}.type
-
-  - dimension_group: updated_at
-    type: time
-    timeframes: [time, date, week, month]
-    sql: ${TABLE}.updated_at
-
-  - dimension: url
-    type: string
-    sql: ${TABLE}.url
-
+    
   - dimension: via__channel
     type: string
     sql: ${TABLE}.via__channel
-
-  - dimension: via__source__from__address
-    type: string
-    sql: ${TABLE}.via__source__from__address
-
-  - dimension: via__source__from__name
-    type: string
-    sql: ${TABLE}.via__source__from__name
-
-  - dimension: via__source__from__subject
-    type: string
-    sql: ${TABLE}.via__source__from__subject
-
-  - dimension: via__source__rel
-    type: string
-    sql: ${TABLE}.via__source__rel
-
-  - dimension: via__source__to__address
-    type: string
-    sql: ${TABLE}.via__source__to__address
-
-  - dimension: via__source__to__name
-    type: string
-    sql: ${TABLE}.via__source__to__name
 
   - measure: count
     type: count

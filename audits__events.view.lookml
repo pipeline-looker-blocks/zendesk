@@ -7,10 +7,6 @@
     type: number
     sql: ${TABLE}.id
 
-  - dimension: _rjm_level_0_id
-    type: number
-    sql: ${TABLE}._rjm_level_0_id
-
   - dimension: _rjm_source_key_id
     type: number
     sql: ${TABLE}._rjm_source_key_id
@@ -25,7 +21,6 @@
 
   - dimension: audit_id
     type: number
-    # hidden: true
     sql: ${TABLE}.audit_id
 
   - dimension: author_id
@@ -44,15 +39,6 @@
     type: yesno
     sql: ${TABLE}.public
 
-## REMOVE?
-#   - dimension: resource8d62628496709122f28c657cd8d694aa
-#     type: number
-#     sql: ${TABLE}."resource#8d62628496709122f28c657cd8d694aa"
-# 
-#   - dimension: resourcec436944843b562f7f0e888953d2bd016
-#     type: string
-#     sql: ${TABLE}."resource#c436944843b562f7f0e888953d2bd016"
-
   - dimension: subject
     type: string
     sql: ${TABLE}.subject
@@ -65,8 +51,8 @@
 
   - dimension_group: created_at
     type: time
-    timeframes: [time, date, week, month]
-    sql: ${audits.created_at}
+    timeframes: [date, week, month]
+    sql: ${audits.created_at_date}
 
   - dimension: type
     type: string
@@ -75,22 +61,6 @@
   - dimension: value
     type: string
     sql: ${TABLE}.value
-
-  - dimension: via__channel
-    type: string
-    sql: ${TABLE}.via__channel
-
-  - dimension: via__source__from__id
-    type: number
-    sql: ${TABLE}.via__source__from__id
-
-  - dimension: via__source__from__title
-    type: string
-    sql: ${TABLE}.via__source__from__title
-
-  - dimension: via__source__rel
-    type: string
-    sql: ${TABLE}.via__source__rel
 
   - measure: count
     type: count

@@ -7,10 +7,6 @@
     type: number
     sql: ${TABLE}.id
 
-  - dimension: _rjm_batched_at
-    type: number
-    sql: ${TABLE}._rjm_batched_at
-
   - dimension: agent_wait_time_in_minutes__business
     type: number
     sql: ${TABLE}.agent_wait_time_in_minutes__business
@@ -36,10 +32,6 @@
     type: string
     sql: ${zendesk_groups.name}
 
-  - dimension: assignee_stations
-    type: number
-    sql: ${TABLE}.assignee_stations
-
   - dimension_group: assignee_updated
     type: time
     timeframes: [time, date, week, month]
@@ -60,13 +52,13 @@
     type: avg
     sql: ${first_resolution_time_in_minutes__business}
 
-  - dimension: first_resolution_time_in_minutes__calendar
-    type: number
-    sql: ${TABLE}.first_resolution_time_in_minutes__calendar
-    
-  - measure: avg_first_resolution_time_in_minutes__calendar
-    type: avg
-    sql: ${first_resolution_time_in_minutes__calendar}
+#   - dimension: first_resolution_time_in_minutes__calendar
+#     type: number
+#     sql: ${TABLE}.first_resolution_time_in_minutes__calendar
+#     
+#   - measure: avg_first_resolution_time_in_minutes__calendar
+#     type: avg
+#     sql: ${first_resolution_time_in_minutes__calendar}
 
   - dimension: full_resolution_time_in_minutes__business
     type: number
@@ -76,13 +68,13 @@
     type: avg
     sql: ${full_resolution_time_in_minutes__business}
 
-  - dimension: full_resolution_time_in_minutes__calendar
-    type: number
-    sql: ${TABLE}.full_resolution_time_in_minutes__calendar
-    
-  - measure: avg_full_resolution_time_in_minutes__calendar
-    type: avg
-    sql: ${full_resolution_time_in_minutes__calendar}
+#   - dimension: full_resolution_time_in_minutes__calendar
+#     type: number
+#     sql: ${TABLE}.full_resolution_time_in_minutes__calendar
+#     
+#   - measure: avg_full_resolution_time_in_minutes__calendar
+#     type: avg
+#     sql: ${full_resolution_time_in_minutes__calendar}
     
 # HOURS
     
@@ -94,13 +86,13 @@
     type: avg
     sql: ${first_resolution_time_in_hours__business}
 
-  - dimension: first_resolution_time_in_hours__calendar
-    type: number
-    sql: ${TABLE}.first_resolution_time_in_minutes__calendar / 60
-    
-  - measure: avg_first_resolution_time_in_hours__calendar
-    type: avg
-    sql: ${first_resolution_time_in_hours__calendar}
+#   - dimension: first_resolution_time_in_hours__calendar
+#     type: number
+#     sql: ${TABLE}.first_resolution_time_in_minutes__calendar / 60
+#     
+#   - measure: avg_first_resolution_time_in_hours__calendar
+#     type: avg
+#     sql: ${first_resolution_time_in_hours__calendar}
 
   - dimension: full_resolution_time_in_hours__business
     type: number
@@ -110,13 +102,13 @@
     type: avg
     sql: ${full_resolution_time_in_hours__business}
 
-  - dimension: full_resolution_time_in_hours__calendar
-    type: number
-    sql: ${TABLE}.full_resolution_time_in_minutes__calendar / 60
-    
-  - measure: avg_full_resolution_time_in_hours__calendar
-    type: avg
-    sql: ${full_resolution_time_in_minutes__calendar}
+#   - dimension: full_resolution_time_in_hours__calendar
+#     type: number
+#     sql: ${TABLE}.full_resolution_time_in_minutes__calendar / 60
+#     
+#   - measure: avg_full_resolution_time_in_hours__calendar
+#     type: avg
+#     sql: ${full_resolution_time_in_minutes__calendar}
     
 # DAYS
     
@@ -128,13 +120,13 @@
     type: avg
     sql: ${first_resolution_time_in_days__business}
 
-  - dimension: first_resolution_time_in_days__calendar
-    type: number
-    sql: ${TABLE}.first_resolution_time_in_minutes__calendar / 1440
-    
-  - measure: avg_first_resolution_time_in_days__calendar
-    type: avg
-    sql: ${first_resolution_time_in_days__calendar}
+#   - dimension: first_resolution_time_in_days__calendar
+#     type: number
+#     sql: ${TABLE}.first_resolution_time_in_minutes__calendar / 1440
+#     
+#   - measure: avg_first_resolution_time_in_days__calendar
+#     type: avg
+#     sql: ${first_resolution_time_in_days__calendar}
 
   - dimension: full_resolution_time_in_days__business
     type: number
@@ -144,17 +136,14 @@
     type: avg
     sql: ${full_resolution_time_in_days__business}
 
-  - dimension: full_resolution_time_in_days__calendar
-    type: number
-    sql: ${TABLE}.full_resolution_time_in_minutes__calendar / 1440
-    
-  - measure: avg_full_resolution_time_in_days__calendar
-    type: avg
-    sql: ${full_resolution_time_in_days__calendar}
+#   - dimension: full_resolution_time_in_days__calendar
+#     type: number
+#     sql: ${TABLE}.full_resolution_time_in_minutes__calendar / 1440
+#     
+#   - measure: avg_full_resolution_time_in_days__calendar
+#     type: avg
+#     sql: ${full_resolution_time_in_days__calendar}
 
-  - dimension: group_stations
-    type: number
-    sql: ${TABLE}.group_stations
 
   - dimension_group: initially_assigned
     type: time
@@ -166,13 +155,13 @@
     timeframes: [time, date, week, month]
     sql: ${TABLE}.latest_comment_added_at
 
-  - dimension: on_hold_time_in_minutes__business
-    type: number
-    sql: ${TABLE}.on_hold_time_in_minutes__business
-
-  - dimension: on_hold_time_in_minutes__calendar
-    type: number
-    sql: ${TABLE}.on_hold_time_in_minutes__calendar
+#   - dimension: on_hold_time_in_minutes__business
+#     type: number
+#     sql: ${TABLE}.on_hold_time_in_minutes__business
+# 
+#   - dimension: on_hold_time_in_minutes__calendar
+#     type: number
+#     sql: ${TABLE}.on_hold_time_in_minutes__calendar
 
   - dimension: reopens
     type: number
@@ -192,13 +181,13 @@
     type: avg
     sql: ${reply_time_in_minutes__business}
 
-  - dimension: reply_time_in_minutes__calendar
-    type: number
-    sql: ${TABLE}.reply_time_in_minutes__calendar
-    
-  - measure: avg_reply_time_in_minutes__calendar
-    type: avg
-    sql: ${reply_time_in_minutes__calendar}
+#   - dimension: reply_time_in_minutes__calendar
+#     type: number
+#     sql: ${TABLE}.reply_time_in_minutes__calendar
+#     
+#   - measure: avg_reply_time_in_minutes__calendar
+#     type: avg
+#     sql: ${reply_time_in_minutes__calendar}
     
 # FIRST REPLY HOURS
 
@@ -210,13 +199,13 @@
     type: avg
     sql: ${reply_time_in_hours__business}
 
-  - dimension: reply_time_in_hours__calendar
-    type: number
-    sql: ${TABLE}.reply_time_in_minutes__calendar / 60
-    
-  - measure: avg_reply_time_in_hours__calendar
-    type: avg
-    sql: ${reply_time_in_hours__calendar}
+#   - dimension: reply_time_in_hours__calendar
+#     type: number
+#     sql: ${TABLE}.reply_time_in_minutes__calendar / 60
+#     
+#   - measure: avg_reply_time_in_hours__calendar
+#     type: avg
+#     sql: ${reply_time_in_hours__calendar}
 
   - dimension_group: requester_updated
     type: time
@@ -227,9 +216,9 @@
     type: number
     sql: ${TABLE}.requester_wait_time_in_minutes__business
 
-  - dimension: requester_wait_time_in_minutes__calendar
-    type: number
-    sql: ${TABLE}.requester_wait_time_in_minutes__calendar
+#   - dimension: requester_wait_time_in_minutes__calendar
+#     type: number
+#     sql: ${TABLE}.requester_wait_time_in_minutes__calendar
 
   - dimension_group: solved
     type: time
@@ -250,10 +239,6 @@
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.updated_at
-
-  - dimension: url
-    type: string
-    sql: ${TABLE}.url
 
   - measure: count
     type: count

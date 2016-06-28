@@ -12,22 +12,13 @@
     timeframes: [time, date, week, month]
     sql: ${TABLE}.created_at
 
-  - dimension: deleted
-    type: yesno
-    sql: ${TABLE}.deleted
+#   - dimension: deleted
+#     type: yesno
+#     sql: ${TABLE}.deleted
 
   - dimension: name
     type: string
     sql: ${TABLE}.name
-
-  - dimension: updated_at
-    type: time
-    timeframes: [time, date, week, month]
-    sql: ${TABLE}.updated_at
-
-  - dimension: url
-    type: string
-    sql: ${TABLE}.url
 
   - measure: count
     type: count
