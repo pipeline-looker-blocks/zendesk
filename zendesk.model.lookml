@@ -44,26 +44,13 @@
       sql_on: ${tickets.organization_id} = ${organizations.id}
       relationship: many_to_one
 
-
-- explore: audits__events__attachments
-
-- explore: audits__events__previous_value
-
-- explore: audits__events__recipients
-
 - explore: audits__events__value
 
 - explore: average_tickets_per_org
 
 - explore: organizations
 
-- explore: organizations__domain_names
-
 - explore: ticket_fields
-
-- explore: ticket_fields__custom_field_options
-
-- explore: ticket_fields__system_field_options
 
 - explore: tickets
   joins:
@@ -89,13 +76,7 @@
       sql_on: ${tickets.group_id} = ${zendesk_groups.id}
       relationship: many_to_one
 
-- explore: tickets__collaborator_ids
-
-- explore: tickets__custom_fields
-
 - explore: tickets__fields
-
-- explore: tickets__followup_ids
 
 - explore: tickets__tags
 
@@ -106,13 +87,7 @@
       sql_on: ${users.organization_id} = ${organizations.id}
       relationship: many_to_one
 
-- explore: users__photo__thumbnails
-
 - explore: zendesk_groups
-
-- explore: zendesk_macros
-
-- explore: zendesk_macros__actions
 
 - explore: zendesk_tags
 
