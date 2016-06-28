@@ -44,10 +44,6 @@
       sql_on: ${tickets.organization_id} = ${organizations.id}
       relationship: many_to_one
 
-- explore: audits__events__value
-
-- explore: average_tickets_per_org
-
 - explore: organizations
 
 - explore: ticket_fields

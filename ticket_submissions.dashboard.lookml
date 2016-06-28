@@ -25,6 +25,7 @@
     show_single_value_title: true
     single_value_title: All time tickets submitted
     show_comparison: false
+    
   - name: orgs_submitting
     type: single_value
     model: zendesk
@@ -35,16 +36,22 @@
     show_single_value_title: true
     single_value_title: Organizations submitting tickets
     show_comparison: false
+    
   - name: avg_tickets_per_org
+    title: Average tickets per org
     type: single_value
     model: zendesk
-    explore: average_tickets_per_org
-    measures: [average_tickets_per_org.avg_tix_per_org]
-    sorts: [average_tickets_per_org.avg_tix_per_org desc]
+    explore: tickets
+    measures: [tickets.count_distinct_organizations, tickets.count]
+    dynamic_fields:
+    - table_calculation: average_tickets_per_org
+      label: Average tickets per org
+      expression: round(${tickets.count} / ${tickets.count_distinct_organizations}, 2)
+    hidden_fields: [tickets.count_distinct_organizations, tickets.count]
+    sorts: [tickets.count_distinct_organizations desc]
     limit: 500
-    show_single_value_title: true
-    single_value_title: Avg. number of tickets submitted per organization
     show_comparison: false
+    
   - name: ticket_stats_by_org
     title: Ticket stats by organization
     type: table
@@ -55,6 +62,7 @@
       tickets.count_solved_tickets, tickets.count, zendesk_ticket_metrics.avg_full_resolution_time_in_days__business]
     sorts: [tickets.count_new_tickets desc]
     limit: 500
+    
   - name: tickets_submitted_by_org
     title: Tickets submitted by organization
     type: looker_column
@@ -83,6 +91,7 @@
     x_axis_scale: time
     ordering: none
     show_null_labels: false
+    
   - name: peak_hours
     title: Peak hours
     type: looker_column
@@ -110,6 +119,7 @@
     x_axis_scale: auto
     ordering: none
     show_null_labels: false
+    
   - name: peak_days
     title: Peak days
     type: looker_column
