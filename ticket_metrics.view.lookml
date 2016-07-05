@@ -44,6 +44,10 @@
     timeframes: [time, date, week, month]
     sql: ${TABLE}.created_at
     
+  - dimension: organization_name
+    type: string
+    sql: ${tickets.organization_name}
+    
     
 # MINUTES
 

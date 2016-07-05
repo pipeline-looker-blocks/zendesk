@@ -11,7 +11,14 @@
     - elements: [performance_by_agent]
       height: 400
 
-#  filters:
+  filters:
+ 
+  - name: date
+    type: date_filter
+  - name: group
+    type: string_filter
+  - name: agent
+    type: string_filter
 
   elements:
 
@@ -25,6 +32,11 @@
     limit: 500
     show_single_value_title: true
     show_comparison: false
+    listen:
+      date: zendesk_ticket_metrics.created_date
+      group: zendesk_ticket_metrics.group_name
+      agent: zendesk_ticket_metrics.assignee_email
+      
   - name: average_response_time
     title: Average business hours to first response
     type: single_value
@@ -35,6 +47,11 @@
     limit: 500
     show_single_value_title: true
     show_comparison: false
+    listen:
+      date: zendesk_ticket_metrics.created_date
+      group: zendesk_ticket_metrics.group_name
+      agent: zendesk_ticket_metrics.assignee_email
+      
   - name: tickets_solved
     title: All time tickets solved
     type: single_value
@@ -44,6 +61,11 @@
     limit: 500
     show_single_value_title: true
     show_comparison: false
+    listen:
+      date: zendesk_ticket_metrics.created_date
+      group: zendesk_ticket_metrics.group_name
+      agent: zendesk_ticket_metrics.assignee_email
+      
   - name: performance_by_group
     title: Performance by group
     type: looker_column
@@ -73,6 +95,11 @@
     x_axis_scale: auto
     y_axis_scale_mode: linear
     show_null_labels: false
+    listen:
+      date: zendesk_ticket_metrics.created_date
+      group: zendesk_ticket_metrics.group_name
+      agent: zendesk_ticket_metrics.assignee_email
+      
   - name: performance_over_time
     title: Performance over time
     type: looker_line
@@ -105,6 +132,11 @@
     show_null_points: true
     point_style: none
     interpolation: linear
+    listen:
+      date: zendesk_ticket_metrics.created_date
+      group: zendesk_ticket_metrics.group_name
+      agent: zendesk_ticket_metrics.assignee_email
+      
   - name: performance_by_agent
     title: Performance by agent
     type: table
@@ -121,3 +153,8 @@
     truncate_column_names: false
     table_theme: editable
     limit_displayed_rows: false
+    listen:
+      date: zendesk_ticket_metrics.created_date
+      group: zendesk_ticket_metrics.group_name
+      agent: zendesk_ticket_metrics.assignee_email
+      

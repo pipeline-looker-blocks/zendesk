@@ -11,7 +11,10 @@
     - elements: [top_orgs, top_requesters, top_assignees]
       height: 400
 
-#  filters:
+  filters:
+ 
+  - name: date
+    type: date_filter
 
   elements:
 
@@ -27,6 +30,9 @@
     show_single_value_title: true
     single_value_title: New and open tickets
     show_comparison: false
+    listen:
+      date: tickets.created_at_date
+      
   - name: pending_tickets
     title: Pending tickets
     type: single_value
@@ -41,6 +47,9 @@
     show_single_value_title: true
     single_value_title: Pending tickets
     show_comparison: false
+    listen:
+      date: tickets.created_at_date
+      
   - name: closed_tickets
     title: Untitled Visualization
     type: single_value
@@ -54,6 +63,9 @@
     show_single_value_title: true
     single_value_title: Closed and solved tickets
     show_comparison: false
+    listen:
+      date: tickets.created_at_date
+      
   - name: tickets_by_channel
     title: Tickets submitted by channel
     type: looker_pie
@@ -67,6 +79,9 @@
     colors: ['#62bad4', '#a9c574', '#929292', '#9fdee0', '#1f3e5a', '#90c8ae', '#92818d',
       '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
     show_view_names: true
+    listen:
+      date: tickets.created_at_date
+      
   - name: tickets_and_orgs
     title: Ticket submissions over time
     type: looker_line
@@ -95,6 +110,9 @@
     show_null_points: true
     point_style: none
     interpolation: linear
+    listen:
+      date: tickets.created_at_date
+      
   - name: count_by_status
     title: New, open, solved, and pending ticket count
     type: looker_column
@@ -121,6 +139,9 @@
     x_axis_scale: auto
     y_axis_scale_mode: linear
     show_null_labels: false
+    listen:
+      date: tickets.created_at_date
+      
   - name: top_orgs
     title: Top 20 organizations by tickets submitted
     type: table
@@ -135,6 +156,9 @@
     truncate_column_names: false
     table_theme: editable
     limit_displayed_rows: false
+    listen:
+      date: tickets.created_at_date
+      
   - name: top_requesters
     title: Top 20 requesters by tickets submitted
     type: table
@@ -149,6 +173,9 @@
     truncate_column_names: false
     table_theme: editable
     limit_displayed_rows: false
+    listen:
+      date: tickets.created_at_date
+      
   - name: top_assignees
     title: Top 20 agents by all time tickets
     type: table
@@ -163,8 +190,5 @@
     truncate_column_names: false
     table_theme: editable
     limit_displayed_rows: false
-
-
-
-
-
+    listen:
+      date: tickets.created_at_date
