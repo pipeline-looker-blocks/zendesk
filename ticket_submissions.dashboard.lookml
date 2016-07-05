@@ -11,7 +11,13 @@
     - elements: [peak_hours, peak_days]
       height: 400
 
-#  filters:
+  filters:
+
+  - name: date
+    type: date_filter
+  - name: organization
+    type: string_filter
+
 
   elements:
 
@@ -25,6 +31,9 @@
     show_single_value_title: true
     single_value_title: All time tickets submitted
     show_comparison: false
+    listen:
+      date: tickets.created_at_date
+      organization: tickets.organization_name
     
   - name: orgs_submitting
     type: single_value
@@ -36,6 +45,9 @@
     show_single_value_title: true
     single_value_title: Organizations submitting tickets
     show_comparison: false
+    listen:
+      date: tickets.created_at_date
+      organization: tickets.organization_name
     
   - name: avg_tickets_per_org
     title: Average tickets per org
@@ -51,6 +63,9 @@
     sorts: [tickets.count_distinct_organizations desc]
     limit: 500
     show_comparison: false
+    listen:
+      date: tickets.created_at_date
+      organization: tickets.organization_name
     
   - name: ticket_stats_by_org
     title: Ticket stats by organization
@@ -62,6 +77,9 @@
       tickets.count_solved_tickets, tickets.count, zendesk_ticket_metrics.avg_full_resolution_time_in_days__business]
     sorts: [tickets.count_new_tickets desc]
     limit: 500
+    listen:
+      date: zendesk_ticket_metrics.created_date
+      organization: zendesk_ticket_metrics.organization_name
     
   - name: tickets_submitted_by_org
     title: Ticket submitted by organization
@@ -95,6 +113,9 @@
     show_null_points: true
     point_style: none
     interpolation: linear
+    listen:
+      date: tickets.created_at_date
+      organization: tickets.organization_name
 
     
   - name: peak_hours
@@ -124,6 +145,9 @@
     x_axis_scale: auto
     ordering: none
     show_null_labels: false
+    listen:
+      date: tickets.created_at_date
+      organization: tickets.organization_name
     
   - name: peak_days
     title: Peak days
@@ -152,6 +176,9 @@
     x_axis_scale: auto
     ordering: none
     show_null_labels: false
+    listen:
+      date: tickets.created_at_date
+      organization: tickets.organization_name
     
 
 
