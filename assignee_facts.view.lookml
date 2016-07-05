@@ -48,11 +48,7 @@
     type: sum
     sql: ${lifetime_tickets}
     drill_fields: detail*
-
-#   - measure: average_tickets_per_day  ## does this need to be weighted? ##
-#     sql: ${avg_tickets_per_day}
-#     drill_fields: detail*
-
+    
   sets:
     detail:
       - assignee_id

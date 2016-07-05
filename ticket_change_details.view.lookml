@@ -43,7 +43,6 @@
     type: string
     sql: ${TABLE}.subject
 
-
   - dimension: ticket_id
     type: number
     value_format_name: id

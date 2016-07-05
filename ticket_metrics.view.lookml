@@ -1,6 +1,8 @@
 - view: zendesk_ticket_metrics
   sql_table_name: zd_pipeline.zendesk_ticket_metrics
   fields:
+  
+#   definition resource: https://developer.zendesk.com/rest_api/docs/core/ticket_metrics
 
   - dimension: id
     primary_key: true
@@ -42,6 +44,7 @@
     timeframes: [time, date, week, month]
     sql: ${TABLE}.created_at
     
+    
 # MINUTES
 
   - dimension: first_resolution_time_in_minutes__business
@@ -75,6 +78,7 @@
 #   - measure: avg_full_resolution_time_in_minutes__calendar
 #     type: avg
 #     sql: ${full_resolution_time_in_minutes__calendar}
+
     
 # HOURS
     
@@ -109,6 +113,7 @@
 #   - measure: avg_full_resolution_time_in_hours__calendar
 #     type: avg
 #     sql: ${full_resolution_time_in_minutes__calendar}
+
     
 # DAYS
     
@@ -170,6 +175,7 @@
   - dimension: replies
     type: number
     sql: ${TABLE}.replies
+    
 
 # FIRST REPLY MINUTES
 
@@ -188,6 +194,7 @@
 #   - measure: avg_reply_time_in_minutes__calendar
 #     type: avg
 #     sql: ${reply_time_in_minutes__calendar}
+
     
 # FIRST REPLY HOURS
 
