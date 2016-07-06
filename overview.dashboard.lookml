@@ -76,8 +76,7 @@
     sorts: [tickets.count desc]
     limit: 500
     value_labels: legend
-    colors: ['#62bad4', '#a9c574', '#929292', '#9fdee0', '#1f3e5a', '#90c8ae', '#92818d',
-      '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
+    colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
     show_view_names: true
     listen:
       date: tickets.created_at_date
@@ -110,6 +109,7 @@
     show_null_points: true
     point_style: none
     interpolation: linear
+    colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
     listen:
       date: tickets.created_at_date
       
@@ -139,6 +139,7 @@
     x_axis_scale: auto
     y_axis_scale_mode: linear
     show_null_labels: false
+    colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
     listen:
       date: tickets.created_at_date
       
