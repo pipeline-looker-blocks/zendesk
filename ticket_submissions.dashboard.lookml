@@ -93,8 +93,7 @@
     limit: 1000
     column_limit: 5000
     stacking: ''
-    colors: ['#62bad4', '#a9c574', '#929292', '#9fdee0', '#1f3e5a', '#90c8ae', '#92818d',
-      '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
+    colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
     show_value_labels: false
     label_density: 25
     legend_position: center
