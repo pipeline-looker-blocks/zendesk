@@ -5,11 +5,6 @@
 
 
 - explore: audits
-  fields: [
-    ALL_FIELDS*,
-    -tickets.requester_email,
-    -tickets.assignee_email
-    ]
   joins:
     - join: tickets
       type: left_outer 
@@ -20,14 +15,21 @@
       type: left_outer 
       sql_on: ${tickets.organization_id} = ${organizations.id}
       relationship: many_to_one
+      
+    - join: requesters
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.requester_id} = ${requesters.id}
+      relationship: many_to_one
+
+    - join: assignees
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.assignee_id} = ${assignees.id}
+      relationship: many_to_one
 
 
 - explore: audits__events
-  fields: [
-    ALL_FIELDS*,
-    -tickets.requester_email,
-    -tickets.assignee_email
-    ]
   joins:
     - join: audits
       type: left_outer 
@@ -42,6 +44,18 @@
     - join: organizations
       type: left_outer 
       sql_on: ${tickets.organization_id} = ${organizations.id}
+      relationship: many_to_one
+      
+    - join: requesters
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.requester_id} = ${requesters.id}
+      relationship: many_to_one
+
+    - join: assignees
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.assignee_id} = ${assignees.id}
       relationship: many_to_one
 
 - explore: organizations
@@ -88,11 +102,6 @@
 - explore: zendesk_tags
 
 - explore: zendesk_ticket_metrics
-  fields: [
-    ALL_FIELDS*,
-    -tickets.requester_email, 
-    -tickets.assignee_email
-    ]
   joins:
     - join: tickets
       type: left_outer 
@@ -112,5 +121,17 @@
     - join: zendesk_groups
       type: left_outer
       sql_on: ${tickets.group_id} = ${zendesk_groups.id}
+      relationship: many_to_one
+      
+    - join: requesters
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.requester_id} = ${requesters.id}
+      relationship: many_to_one
+
+    - join: assignees
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.assignee_id} = ${assignees.id}
       relationship: many_to_one
 
