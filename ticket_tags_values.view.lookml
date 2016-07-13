@@ -1,4 +1,4 @@
-- view: tickets__tags
+- view: ticket__tags
   sql_table_name: zd_pipeline.tickets__tags
   fields:
 

@@ -200,11 +200,11 @@
     title: Ticket tags
     type: looker_column
     model: zendesk
-    explore: tickets__tags
-    dimensions: [tickets__tags.value, tickets__tags.created_at_month]
-    pivots: [tickets__tags.value]
-    measures: [tickets__tags.count]
-    sorts: [tickets__tags.created_at_month desc, tickets__tags.value]
+    explore: ticket__tags
+    dimensions: [ticket__tags.value, ticket__tags.created_at_month]
+    pivots: [ticket__tags.value]
+    measures: [ticket__tags.count]
+    sorts: [ticket__tags.created_at_month desc, ticket__tags.value]
     limit: 500
     column_limit: 50
     stacking: percent
@@ -226,4 +226,4 @@
     show_null_labels: false
     colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
     listen:
-      date: tickets__tags.created_at_date
+      date: ticket__tags.created_at_date

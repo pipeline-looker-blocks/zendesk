@@ -1,4 +1,4 @@
-- view: zendesk_tags
+- view: tag_types
   sql_table_name: zd_pipeline.zendesk_tags
   fields:
 

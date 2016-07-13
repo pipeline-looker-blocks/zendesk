@@ -1,4 +1,4 @@
-- view: zendesk_ticket_metrics
+- view: ticket_metrics
   sql_table_name: zd_pipeline.zendesk_ticket_metrics
   fields:
   
@@ -32,7 +32,7 @@
     
   - dimension: group_name
     type: string
-    sql: ${zendesk_groups.name}
+    sql: ${groups.name}
 
   - dimension_group: assignee_updated
     type: time

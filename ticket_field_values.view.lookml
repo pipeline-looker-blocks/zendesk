@@ -2,7 +2,7 @@
   sql_table_name: zd_pipeline.tickets__fields
   fields:
 
-  - dimension: id
+  - dimension: id_field_value
     primary_key: true
     type: number
     sql: ${TABLE}.id
@@ -15,7 +15,7 @@
     type: string
     sql: ${TABLE}.value
 
-  - measure: count
+  - measure: count_field_values
     type: count
-    drill_fields: [id]
+    drill_fields: [id_field_value]
 

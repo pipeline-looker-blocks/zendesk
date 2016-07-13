@@ -1,4 +1,4 @@
-- view: zendesk_ticket_history_audit
+- view: ticket_history_audit
   derived_table:
 
     sql: |
