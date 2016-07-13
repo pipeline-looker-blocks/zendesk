@@ -26,55 +26,55 @@
     title: Average business days to resolution
     type: single_value
     model: zendesk
-    explore: zendesk_ticket_metrics
-    measures: [zendesk_ticket_metrics.avg_first_resolution_time_in_days__business]
-    sorts: [zendesk_ticket_metrics.avg_first_resolution_time_in_days__business desc]
+    explore: ticket_metrics
+    measures: [ticket_metrics.avg_first_resolution_time_in_days__business]
+    sorts: [ticket_metrics.avg_first_resolution_time_in_days__business desc]
     limit: 500
     show_single_value_title: true
     show_comparison: false
     listen:
-      date: zendesk_ticket_metrics.created_date
-      group: zendesk_ticket_metrics.group_name
-      agent: zendesk_ticket_metrics.assignee_email
+      date: ticket_metrics.created_date
+      group: ticket_metrics.group_name
+      agent: ticket_metrics.assignee_email
       
   - name: average_response_time
     title: Average business hours to first response
     type: single_value
     model: zendesk
-    explore: zendesk_ticket_metrics
-    measures: [zendesk_ticket_metrics.avg_reply_time_in_hours__business]
-    sorts: [zendesk_ticket_metrics.avg_reply_time_in_hours__business desc]
+    explore: ticket_metrics
+    measures: [ticket_metrics.avg_reply_time_in_hours__business]
+    sorts: [ticket_metrics.avg_reply_time_in_hours__business desc]
     limit: 500
     show_single_value_title: true
     show_comparison: false
     listen:
-      date: zendesk_ticket_metrics.created_date
-      group: zendesk_ticket_metrics.group_name
-      agent: zendesk_ticket_metrics.assignee_email
+      date: ticket_metrics.created_date
+      group: ticket_metrics.group_name
+      agent: ticket_metrics.assignee_email
       
   - name: tickets_solved
     title: All time tickets solved
     type: single_value
     model: zendesk
-    explore: zendesk_ticket_metrics
+    explore: ticket_metrics
     measures: [tickets.count_solved_tickets]
     limit: 500
     show_single_value_title: true
     show_comparison: false
     listen:
-      date: zendesk_ticket_metrics.created_date
-      group: zendesk_ticket_metrics.group_name
-      agent: zendesk_ticket_metrics.assignee_email
+      date: ticket_metrics.created_date
+      group: ticket_metrics.group_name
+      agent: ticket_metrics.assignee_email
       
   - name: performance_by_group
     title: Performance by group
     type: looker_column
     model: zendesk
-    explore: zendesk_ticket_metrics
-    dimensions: [zendesk_ticket_metrics.group_name]
-    measures: [zendesk_ticket_metrics.count, zendesk_ticket_metrics.avg_first_resolution_time_in_days__business,
-      zendesk_ticket_metrics.avg_reply_time_in_hours__business]
-    sorts: [zendesk_ticket_metrics.count desc]
+    explore: ticket_metrics
+    dimensions: [ticket_metrics.group_name]
+    measures: [ticket_metrics.count, ticket_metrics.avg_first_resolution_time_in_days__business,
+      ticket_metrics.avg_reply_time_in_hours__business]
+    sorts: [ticket_metrics.count desc]
     limit: 500
     column_limit: 50
     stacking: ''
@@ -95,19 +95,19 @@
     y_axis_scale_mode: linear
     show_null_labels: false
     listen:
-      date: zendesk_ticket_metrics.created_date
-      group: zendesk_ticket_metrics.group_name
-      agent: zendesk_ticket_metrics.assignee_email
+      date: ticket_metrics.created_date
+      group: ticket_metrics.group_name
+      agent: ticket_metrics.assignee_email
       
   - name: performance_over_time
     title: Performance over time
     type: looker_line
     model: zendesk
-    explore: zendesk_ticket_metrics
-    dimensions: [zendesk_ticket_metrics.created_week]
-    measures: [zendesk_ticket_metrics.count, zendesk_ticket_metrics.avg_reply_time_in_hours__business,
-      zendesk_ticket_metrics.avg_first_resolution_time_in_days__business]
-    sorts: [zendesk_ticket_metrics.count desc]
+    explore: ticket_metrics
+    dimensions: [ticket_metrics.created_week]
+    measures: [ticket_metrics.count, ticket_metrics.avg_reply_time_in_hours__business,
+      ticket_metrics.avg_first_resolution_time_in_days__business]
+    sorts: [ticket_metrics.count desc]
     limit: 500
     column_limit: 50
     stacking: ''
@@ -131,18 +131,18 @@
     point_style: none
     interpolation: linear
     listen:
-      date: zendesk_ticket_metrics.created_date
-      group: zendesk_ticket_metrics.group_name
-      agent: zendesk_ticket_metrics.assignee_email
+      date: ticket_metrics.created_date
+      group: ticket_metrics.group_name
+      agent: ticket_metrics.assignee_email
       
   - name: performance_by_agent
     title: Performance by agent
     type: table
     model: zendesk
-    explore: zendesk_ticket_metrics
-    dimensions: [zendesk_ticket_metrics.assignee_email]
-    measures: [tickets.count_solved_tickets, zendesk_ticket_metrics.avg_reply_time_in_hours__business,
-      zendesk_ticket_metrics.avg_first_resolution_time_in_days__business]
+    explore: ticket_metrics
+    dimensions: [ticket_metrics.assignee_email]
+    measures: [tickets.count_solved_tickets, ticket_metrics.avg_reply_time_in_hours__business,
+      ticket_metrics.avg_first_resolution_time_in_days__business]
     sorts: [tickets.count_solved_tickets desc]
     limit: 500
     column_limit: 50
@@ -152,7 +152,7 @@
     table_theme: editable
     limit_displayed_rows: false
     listen:
-      date: zendesk_ticket_metrics.created_date
-      group: zendesk_ticket_metrics.group_name
-      agent: zendesk_ticket_metrics.assignee_email
+      date: ticket_metrics.created_date
+      group: ticket_metrics.group_name
+      agent: ticket_metrics.assignee_email
       

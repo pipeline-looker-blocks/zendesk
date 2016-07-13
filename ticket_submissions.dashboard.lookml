@@ -71,15 +71,15 @@
     title: Ticket stats by organization
     type: table
     model: zendesk
-    explore: zendesk_ticket_metrics
+    explore: ticket_metrics
     dimensions: [organizations.name]
     measures: [tickets.count_open_tickets, 
-      tickets.count_solved_tickets, tickets.count, zendesk_ticket_metrics.avg_full_resolution_time_in_days__business]
+      tickets.count_solved_tickets, tickets.count, ticket_metrics.avg_full_resolution_time_in_days__business]
     sorts: [tickets.count_new_tickets desc]
     limit: 500
     listen:
-      date: zendesk_ticket_metrics.created_date
-      organization: zendesk_ticket_metrics.organization_name
+      date: ticket_metrics.created_date
+      organization: ticket_metrics.organization_name
     
   - name: tickets_submitted_by_org
     title: Ticket submitted by organization

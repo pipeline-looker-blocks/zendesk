@@ -1,4 +1,4 @@
-- view: zendesk_groups
+- view: groups
   sql_table_name: zendesk_pipeline.zendesk_groups
   fields:
 

@@ -2,7 +2,7 @@
   sql_table_name: zendesk_pipeline.audits__events
   fields:
 
-  - dimension: id
+  - dimension: id_change_events
     primary_key: true
     type: number
     sql: ${TABLE}.id
@@ -45,6 +45,7 @@
 
   - dimension: ticket_id
     type: number
+    hidden: true
     value_format_name: id
     sql: ${audits.ticket_id}
 
