@@ -36,6 +36,9 @@
       relationship: one_to_many
 
 
+#  INCLUDE IF 'TICKET EVENTS' FIELDS ARE DESIRED IN ADDITION TO THE 'TICKET CHANGES' ABOVE 
+
+
 # - explore: audits__events
 #   joins:
 #     - join: audits
@@ -65,42 +68,53 @@
 #       sql_on: ${tickets.assignee_id} = ${assignees.id}
 #       relationship: many_to_one
 
-- explore: organizations
 
-- explore: ticket_fields
-  label: 'Ticket Fields'
-  joins:
-    - join: tickets__fields
-      view_label: 'Ticket Fields'
-      sql_on: ${ticket_fields.id_field_name} = ${tickets__fields._rjm_source_key_id}
-      relationship: one_to_many
+## GROUPS AND ORGANIZATIONS ARE INCLUDED IN THE 'TICKETS' EXPLORE, BRING IN ONLY IF SEPERATE EXPLORES ARE DESIRED
 
-- explore: tickets
-  joins:
-    - join: organizations
-      type: left_outer 
-      sql_on: ${tickets.organization_id} = ${organizations.id}
-      relationship: many_to_one
-      
-    - join: requesters
-      from: users
-      type: left_outer 
-      sql_on: ${tickets.requester_id} = ${requesters.id}
-      relationship: many_to_one
+# - explore: groups
+# 
+# - explore: organizations
 
-    - join: assignees
-      from: users
-      type: left_outer 
-      sql_on: ${tickets.assignee_id} = ${assignees.id}
-      relationship: many_to_one
-      
-    - join: groups
-      type: left_outer 
-      sql_on: ${tickets.group_id} = ${groups.id}
-      relationship: many_to_one
 
-# - explore: tickets__fields
-#   view_label: 'Ticket fields'
+#  ONLY BRING IN IF TICKET FIELDS ARE DESIRED
+
+# - explore: ticket_fields
+#   label: 'Ticket Fields'
+#   joins:
+#     - join: tickets__fields
+#       view_label: 'Ticket Fields'
+#       sql_on: ${ticket_fields.id_field_name} = ${tickets__fields._rjm_source_key_id}
+#       relationship: one_to_many
+
+
+## INCLUDE ONLY IF SEPARATE EXPLORES ARE DESIRED FOR TICKETS AND TICKET METRICS
+
+# - explore: tickets
+#   joins:
+#     - join: organizations
+#       type: left_outer 
+#       sql_on: ${tickets.organization_id} = ${organizations.id}
+#       relationship: many_to_one
+#       
+#     - join: requesters
+#       from: users
+#       type: left_outer 
+#       sql_on: ${tickets.requester_id} = ${requesters.id}
+#       relationship: many_to_one
+# 
+#     - join: assignees
+#       from: users
+#       type: left_outer 
+#       sql_on: ${tickets.assignee_id} = ${assignees.id}
+#       relationship: many_to_one
+#       
+#     - join: groups
+#       type: left_outer 
+#       sql_on: ${tickets.group_id} = ${groups.id}
+#       relationship: many_to_one
+
+
+# INCLUDE ONLY IF TICKETS ARE TAGGED
 
 - explore: ticket__tags
   joins:
@@ -126,18 +140,10 @@
       sql_on: ${tickets.assignee_id} = ${assignees.id}
       relationship: many_to_one
 
-- explore: users
-  joins:
-    - join: organizations
-      type: left_outer 
-      sql_on: ${users.organization_id} = ${organizations.id}
-      relationship: many_to_one
-
-- explore: groups
-
-- explore: tag_types
+# - explore: tag_types
 
 - explore: ticket_metrics
+  label: 'Tickets'
   joins:
     - join: tickets
       type: left_outer 
@@ -171,3 +177,10 @@
       sql_on: ${tickets.assignee_id} = ${assignees.id}
       relationship: many_to_one
 
+
+- explore: users
+  joins:
+    - join: organizations
+      type: left_outer 
+      sql_on: ${users.organization_id} = ${organizations.id}
+      relationship: many_to_one
