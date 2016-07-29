@@ -87,31 +87,32 @@
 #       relationship: one_to_many
 
 
-## INCLUDE ONLY IF SEPARATE EXPLORES ARE DESIRED FOR TICKETS AND TICKET METRICS
+## INCLUDE IF SEPARATE EXPLORES ARE DESIRED FOR TICKETS AND TICKET METRICS 
+## OR IF USING A BASE VIEW OF TICKETS BECOMES MORE PERFORMANT
 
-# - explore: tickets
-#   joins:
-#     - join: organizations
-#       type: left_outer 
-#       sql_on: ${tickets.organization_id} = ${organizations.id}
-#       relationship: many_to_one
-#       
-#     - join: requesters
-#       from: users
-#       type: left_outer 
-#       sql_on: ${tickets.requester_id} = ${requesters.id}
-#       relationship: many_to_one
-# 
-#     - join: assignees
-#       from: users
-#       type: left_outer 
-#       sql_on: ${tickets.assignee_id} = ${assignees.id}
-#       relationship: many_to_one
-#       
-#     - join: groups
-#       type: left_outer 
-#       sql_on: ${tickets.group_id} = ${groups.id}
-#       relationship: many_to_one
+- explore: tickets
+  joins:
+    - join: organizations
+      type: left_outer 
+      sql_on: ${tickets.organization_id} = ${organizations.id}
+      relationship: many_to_one
+      
+    - join: requesters
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.requester_id} = ${requesters.id}
+      relationship: many_to_one
+
+    - join: assignees
+      from: users
+      type: left_outer 
+      sql_on: ${tickets.assignee_id} = ${assignees.id}
+      relationship: many_to_one
+      
+    - join: groups
+      type: left_outer 
+      sql_on: ${tickets.group_id} = ${groups.id}
+      relationship: many_to_one
 
 
 # INCLUDE ONLY IF TICKETS ARE TAGGED
