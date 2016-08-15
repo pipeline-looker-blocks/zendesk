@@ -1,5 +1,5 @@
 - view: users
-  sql_table_name: zendesk_pipeline.users
+  sql_table_name: looker_zendesk.users
   fields:
 
   - dimension: id
@@ -103,4 +103,3 @@
   - measure: count
     type: count
     drill_fields: [id, name]
-

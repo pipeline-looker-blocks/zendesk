@@ -1,5 +1,5 @@
 - view: tickets
-  sql_table_name: zendesk_pipeline.tickets
+  sql_table_name: looker_zendesk.tickets
   fields:
   
 
@@ -192,4 +192,3 @@
 #     - organizations.name
 #     - audits.count
 #     - zendesk_ticket_metrics.count
-

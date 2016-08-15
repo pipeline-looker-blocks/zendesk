@@ -1,5 +1,5 @@
 - view: organizations
-  sql_table_name: zendesk_pipeline.organizations
+  sql_table_name: looker_zendesk.organizations
   fields:
 
   - dimension: id
