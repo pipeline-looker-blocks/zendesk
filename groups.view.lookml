@@ -1,5 +1,5 @@
 - view: groups
-  sql_table_name: zendesk_pipeline.zendesk_groups
+  sql_table_name: looker_zendesk.zendesk_groups
   fields:
 
   - dimension: id
