@@ -1,5 +1,5 @@
 - view: ticket_metrics
-  sql_table_name: zd_pipeline.zendesk_ticket_metrics
+  sql_table_name: looker_zendesk.zendesk_ticket_metrics
   fields:
   
 #   definition resource: https://developer.zendesk.com/rest_api/docs/core/ticket_metrics
@@ -254,4 +254,3 @@
   - measure: count
     type: count
     drill_fields: [id, tickets.via__source__from__name, tickets.id, tickets.via__source__to__name]
-
