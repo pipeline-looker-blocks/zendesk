@@ -1,5 +1,5 @@
 - view: ticket__tags
-  sql_table_name: zd_pipeline.tickets__tags
+  sql_table_name: looker_zendesk.tickets__tags
   fields:
 
   - dimension: _rjm_source_key_id
@@ -18,4 +18,3 @@
   - measure: count
     type: count
     drill_fields: []
-
