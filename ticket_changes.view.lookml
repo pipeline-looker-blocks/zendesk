@@ -1,5 +1,5 @@
 - view: audits
-  sql_table_name: zd_pipeline.audits
+  sql_table_name: looker_zendesk.audits
   fields:
 
   - dimension: id
@@ -36,4 +36,3 @@
     - tickets.id
     - tickets.via__source__to__name
     - audits__events.count
-

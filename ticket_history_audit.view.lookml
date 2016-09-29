@@ -6,7 +6,7 @@
         ticket_id
         , count(*) as ticket_actions
         , LAST_VALUE(new_value IGNORE NULLS) OVER (PARTITION BY ticket_id ORDER BY timestamp ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_value
-      from zd_pipeline.audits__events
+      from looker_zendesk.audits__events
       group by 1, 2, 3
 
   fields:

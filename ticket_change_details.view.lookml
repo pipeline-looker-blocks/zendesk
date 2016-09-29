@@ -1,5 +1,5 @@
 - view: audits__events
-  sql_table_name: zendesk_pipeline.audits__events
+  sql_table_name: looker_zendesk.audits__events
   fields:
 
   - dimension: id_change_events

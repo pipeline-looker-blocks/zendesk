@@ -1,5 +1,5 @@
 - view: ticket_fields
-  sql_table_name: zd_pipeline.ticket_fields
+  sql_table_name: looker_zendesk.ticket_fields
   fields:
 
   - dimension: id_field_name
@@ -51,4 +51,3 @@
   - measure: count_field_names
     type: count
     drill_fields: [id_field_name]
-

@@ -1,5 +1,5 @@
 - view: tag_types
-  sql_table_name: zd_pipeline.zendesk_tags
+  sql_table_name: looker_zendesk.zendesk_tags
   fields:
 
   - dimension: count
@@ -9,4 +9,3 @@
   - dimension: name
     type: string
     sql: ${TABLE}.name
-
