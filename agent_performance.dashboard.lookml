@@ -12,7 +12,7 @@
       height: 400
 
   filters:
- 
+
   - name: date
     type: date_filter
   - name: group
@@ -36,7 +36,7 @@
       date: ticket_metrics.created_date
       group: ticket_metrics.group_name
       agent: ticket_metrics.assignee_email
-      
+
   - name: average_response_time
     title: Average business hours to first response
     type: single_value
@@ -51,7 +51,7 @@
       date: ticket_metrics.created_date
       group: ticket_metrics.group_name
       agent: ticket_metrics.assignee_email
-      
+
   - name: tickets_solved
     title: All time tickets solved
     type: single_value
@@ -65,7 +65,7 @@
       date: ticket_metrics.created_date
       group: ticket_metrics.group_name
       agent: ticket_metrics.assignee_email
-      
+
   - name: performance_by_group
     title: Performance by group
     type: looker_column
@@ -98,7 +98,7 @@
       date: ticket_metrics.created_date
       group: ticket_metrics.group_name
       agent: ticket_metrics.assignee_email
-      
+
   - name: performance_over_time
     title: Performance over time
     type: looker_line
@@ -134,7 +134,7 @@
       date: ticket_metrics.created_date
       group: ticket_metrics.group_name
       agent: ticket_metrics.assignee_email
-      
+
   - name: performance_by_agent
     title: Performance by agent
     type: table
@@ -155,4 +155,3 @@
       date: ticket_metrics.created_date
       group: ticket_metrics.group_name
       agent: ticket_metrics.assignee_email
-      
