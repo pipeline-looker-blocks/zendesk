@@ -14,7 +14,7 @@
       height: 500
 
   filters:
- 
+
   - name: date
     type: date_filter
 
@@ -34,7 +34,7 @@
     show_comparison: false
     listen:
       date: tickets.created_at_date
-      
+
   - name: pending_tickets
     title: Pending tickets
     type: single_value
@@ -51,7 +51,7 @@
     show_comparison: false
     listen:
       date: tickets.created_at_date
-      
+
   - name: closed_tickets
     title: Untitled Visualization
     type: single_value
@@ -67,7 +67,7 @@
     show_comparison: false
     listen:
       date: tickets.created_at_date
-      
+
   - name: tickets_by_channel
     title: Tickets submitted by channel
     type: looker_pie
@@ -82,7 +82,7 @@
     show_view_names: true
     listen:
       date: tickets.created_at_date
-      
+
   - name: tickets_and_orgs
     title: Ticket submissions over time
     type: looker_line
@@ -114,7 +114,7 @@
     colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
     listen:
       date: tickets.created_at_date
-      
+
   - name: count_by_status
     title: New, open, solved, and pending ticket count
     type: looker_column
@@ -144,7 +144,7 @@
     colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
     listen:
       date: tickets.created_at_date
-      
+
   - name: top_orgs
     title: Top 20 organizations by tickets submitted
     type: table
@@ -161,7 +161,7 @@
     limit_displayed_rows: false
     listen:
       date: tickets.created_at_date
-      
+
   - name: top_requesters
     title: Top 20 requesters by tickets submitted
     type: table
@@ -178,7 +178,7 @@
     limit_displayed_rows: false
     listen:
       date: tickets.created_at_date
-      
+
   - name: top_assignees
     title: Top 20 agents by all time tickets
     type: table
@@ -195,7 +195,7 @@
     limit_displayed_rows: false
     listen:
       date: tickets.created_at_date
-      
+
   - name: ticket_tags
     title: Ticket tags
     type: looker_column
