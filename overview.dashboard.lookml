@@ -231,34 +231,34 @@
 #     listen:
 #       date: ticket__tags.created_at_date
 
-  - name: ticket_tags
-    title: Ticket tags
-    type: looker_column
-    model: zendesk
-    explore: ticket__tags
-    dimensions: [ticket__tags.value, ticket__tags.created_at_month]
-    pivots: [ticket__tags.value]
-    measures: [ticket__tags.count]
-    sorts: [ticket__tags.created_at_month desc, ticket__tags.value]
-    limit: 500
-    column_limit: 50
-    stacking: percent
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    ordering: none
-    show_null_labels: false
-    colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
-    listen:
-      date: ticket__tags.created_at_date
+#   - name: ticket_tags
+#     title: Ticket tags
+#     type: looker_column
+#     model: zendesk
+#     explore: ticket__tags
+#     dimensions: [ticket__tags.value, ticket__tags.created_at_month]
+#     pivots: [ticket__tags.value]
+#     measures: [ticket__tags.count]
+#     sorts: [ticket__tags.created_at_month desc, ticket__tags.value]
+#     limit: 500
+#     column_limit: 50
+#     stacking: percent
+#     show_value_labels: false
+#     label_density: 25
+#     legend_position: center
+#     x_axis_gridlines: false
+#     y_axis_gridlines: true
+#     show_view_names: true
+#     limit_displayed_rows: false
+#     y_axis_combined: true
+#     show_y_axis_labels: true
+#     show_y_axis_ticks: true
+#     y_axis_tick_density: default
+#     show_x_axis_label: true
+#     show_x_axis_ticks: true
+#     x_axis_scale: auto
+#     ordering: none
+#     show_null_labels: false
+#     colors: ['#FFCC00', '#1E2023', '#3399CC', '#CC3399', '#66CC66', '#999999', '#FF4E00', '#A2ECBA', '#9932CC', '#0000CD']
+#     listen:
+#       date: ticket__tags.created_at_date
