@@ -1,13 +1,13 @@
 - dashboard: ticket_submissions
   title: Ticket Submissions
-  layout: grid
-  rows:
-    - elements: [all_tickets, orgs_submitting, avg_tickets_per_org]
-      height: 150
-    - elements: [ticket_stats_by_org]
-      height: 400
-    - elements: [peak_hours, peak_days]
-      height: 400
+  layout: tile
+#   rows:
+#     - elements: [all_tickets, orgs_submitting, avg_tickets_per_org]
+#       height: 150
+#     - elements: [ticket_stats_by_org]
+#       height: 400
+#     - elements: [peak_hours, peak_days]
+#       height: 400
 
   filters:
 
