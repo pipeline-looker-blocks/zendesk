@@ -4,8 +4,6 @@
   rows:
     - elements: [all_tickets, orgs_submitting, avg_tickets_per_org]
       height: 150
-    - elements: [tickets_submitted_by_org]
-      height: 600
     - elements: [ticket_stats_by_org]
       height: 400
     - elements: [peak_hours, peak_days]
@@ -24,7 +22,7 @@
   - name: all_tickets
     type: single_value
     model: zendesk
-    explore: tickets
+    explore: ticket_metrics
     measures: [tickets.count]
     sorts: [tickets.count desc]
     limit: 500
@@ -38,7 +36,7 @@
   - name: orgs_submitting
     type: single_value
     model: zendesk
-    explore: tickets
+    explore: ticket_metrics
     measures: [tickets.count_orgs_submitting]
     sorts: [tickets.count_orgs_submitting desc]
     limit: 500
@@ -53,7 +51,7 @@
     title: Average tickets per org
     type: single_value
     model: zendesk
-    explore: tickets
+    explore: ticket_metrics
     measures: [tickets.count_distinct_organizations, tickets.count]
     dynamic_fields:
     - table_calculation: average_tickets_per_org
@@ -80,6 +78,7 @@
     listen:
       date: ticket_metrics.created_date
       organization: ticket_metrics.organization_name
+
 
   - name: tickets_submitted_by_org
     title: Ticket submitted by organization
@@ -121,7 +120,7 @@
     title: Peak hours
     type: looker_column
     model: zendesk
-    explore: tickets
+    explore: ticket_metrics
     dimensions: [tickets.time_hour_of_day]
     measures: [tickets.count]
     sorts: [tickets.time_hour_of_day]
@@ -152,7 +151,7 @@
     title: Peak days
     type: looker_column
     model: zendesk
-    explore: tickets
+    explore: ticket_metrics
     dimensions: [tickets.time_day_of_week]
     measures: [tickets.count]
     sorts: [tickets.time_day_of_week]
