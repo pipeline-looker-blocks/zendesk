@@ -1,5 +1,5 @@
 view: audits__events {
-  sql_table_name: looker_zendesk.audits__events ;;
+  sql_table_name: zendesk.ticket_audits__events ;;
 
   dimension: id_change_events {
     primary_key: yes
@@ -7,29 +7,22 @@ view: audits__events {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: _rjm_source_key_id {
+  dimension: _sdc_source_key_id {
+    label: "Audit ID"
     type: number
-    sql: ${TABLE}._rjm_source_key_id ;;
+    sql: ${TABLE}._sdc_source_key_id ;;
   }
 
-  dimension: action {
-    type: string
-    sql: ${TABLE}.action ;;
-  }
-
-  dimension: agreement_id {
-    type: number
-    sql: ${TABLE}.agreement_id ;;
-  }
-
-  dimension: audit_id {
-    type: number
-    sql: ${TABLE}.audit_id ;;
-  }
+  # dimension: audit_id {
+  #   type: number
+  #   sql: ${TABLE}.audit_id ;;
+  # }
 
   dimension: author_id {
+    # hidden: yes
     type: number
     sql: ${TABLE}.author_id ;;
+    hidden: yes
   }
 
   dimension: field_name {

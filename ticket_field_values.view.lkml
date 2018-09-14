@@ -1,5 +1,8 @@
+#Table and fields do not exist
+#
+########################
 view: tickets__fields {
-  sql_table_name: looker_zendesk.tickets__fields ;;
+  sql_table_name: zendesk.tickets__fields ;;
 
   dimension: id_field_value {
     primary_key: yes

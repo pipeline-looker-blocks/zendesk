@@ -70,7 +70,7 @@
     type: table
     model: zendesk
     explore: ticket_metrics
-    dimensions: [organizations.name]
+    dimensions: [users.organization_name]
     measures: [tickets.count_open_tickets,
       tickets.count_solved_tickets, tickets.count, ticket_metrics.avg_full_resolution_time_in_days__business]
     sorts: [tickets.count_new_tickets desc]

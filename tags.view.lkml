@@ -1,5 +1,10 @@
+#
+#
+#Table and fields do not exist
+##############################
+
 view: tag_types {
-  sql_table_name: looker_zendesk.zendesk_tags ;;
+  sql_table_name: zendesk.zendesk_tags ;;
 
   dimension: count {
     type: number

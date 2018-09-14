@@ -1,5 +1,5 @@
 view: users {
-  sql_table_name: looker_zendesk.users ;;
+  sql_table_name: zendesk.users ;;
 
   dimension: id {
     primary_key: yes
@@ -31,6 +31,10 @@ view: users {
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
+  }
+
+  dimension: organization_name {
+    sql: initcap(SPLIT_PART(SPLIT_PART(${email},'@',2), '.', 1)) ;;
   }
 
   dimension_group: last_login {

@@ -1,4 +1,4 @@
-connection: "stitch_vandelay"
+connection: "zendesk_data"
 
 # include all the views
 include: "*.view"
@@ -38,8 +38,14 @@ explore: audits {
   join: audits__events {
     #       type: left_outer
     view_label: "Ticket Changes"
-    sql_on: ${audits.id} = ${audits__events.audit_id} ;;
+    sql_on: ${audits.id} = ${audits__events._sdc_source_key_id} ;;
     relationship: one_to_many
+  }
+
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${users.organization_id} = ${tickets.organization_id} ;;
   }
 }
 
@@ -77,12 +83,12 @@ explore: organizations {}
 explore: ticket_fields {
   label: "Ticket Fields"
 
-  join: tickets__fields {
-    view_label: "Ticket Fields"
-    sql_on: ${ticket_fields.id_field_name} = ${tickets__fields.ticket_id} ;;
-    relationship: one_to_many
-  }
-}
+#   join: tickets__fields {
+#     view_label: "Ticket Fields"
+#     sql_on: ${ticket_fields.id_field_name} = ${tickets__fields.ticket_id} ;;
+#     relationship: one_to_many
+#   }
+ }
 
 explore: tickets {
   join: organizations {
@@ -109,6 +115,11 @@ explore: tickets {
     type: left_outer
     sql_on: ${tickets.group_id} = ${groups.id} ;;
     relationship: many_to_one
+  }
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${users.organization_id} = ${tickets.organization_id};;
   }
 }
 
@@ -140,6 +151,12 @@ explore: ticket__tags {
     type: left_outer
     sql_on: ${tickets.assignee_id} = ${assignees.id} ;;
     relationship: many_to_one
+  }
+
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${users.organization_id} = ${tickets.organization_id};;
   }
 }
 

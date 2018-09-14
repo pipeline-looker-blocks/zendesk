@@ -1,5 +1,5 @@
 view: tickets {
-  sql_table_name: looker_zendesk.tickets ;;
+  sql_table_name: zendesk.tickets ;;
 
   dimension: id {
     primary_key: yes
@@ -44,7 +44,7 @@ view: tickets {
 
   dimension: organization_name {
     type: string
-    sql: ${organizations.name} ;;
+    sql: ${users.organization_name} ;;
   }
 
   dimension: recipient {
@@ -186,10 +186,10 @@ view: tickets {
 
   measure: count_orgs_submitting {
     type: count_distinct
-    sql: ${organizations.name} ;;
+    sql: ${users.organization_name} ;;
 
     filters: {
-      field: organization_name
+      field: users.organization_name
       value: "-NULL"
     }
   }
