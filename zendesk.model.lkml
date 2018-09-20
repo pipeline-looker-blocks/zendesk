@@ -170,7 +170,6 @@ explore: users {
 
 explore: groups {}
 
-explore: tag_types {}
 
 explore: ticket_metrics {
   join: tickets {
