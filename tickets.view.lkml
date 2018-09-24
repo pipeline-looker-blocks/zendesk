@@ -44,7 +44,7 @@ view: tickets {
 
   dimension: organization_name {
     type: string
-    sql: ${users.organization_name} ;;
+    sql: ${organizations.name} ;;
   }
 
   dimension: recipient {
@@ -186,10 +186,10 @@ view: tickets {
 
   measure: count_orgs_submitting {
     type: count_distinct
-    sql: ${users.organization_name} ;;
+    sql: ${organizations.name} ;;
 
     filters: {
-      field: users.organization_name
+      field: organizations.name
       value: "-NULL"
     }
   }

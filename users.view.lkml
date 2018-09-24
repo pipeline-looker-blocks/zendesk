@@ -33,10 +33,6 @@ view: users {
     sql: ${TABLE}.email ;;
   }
 
-  dimension: organization_name {
-    sql: initcap(SPLIT_PART(SPLIT_PART(${email},'@',2), '.', 1)) ;;
-  }
-
   dimension_group: last_login {
     type: time
     timeframes: [time, date, week, month]

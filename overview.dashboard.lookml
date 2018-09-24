@@ -150,7 +150,7 @@
     type: table
     model: zendesk
     explore: ticket_metrics
-    dimensions: [users.organization_name]
+    dimensions: [organizations.name]
     measures: [tickets.count]
     sorts: [tickets.count desc]
     limit: 20
@@ -162,7 +162,7 @@
     listen:
       date: tickets.created_at_date
     filters:
-      users.organization_name: '-NULL'
+      organizations.name: '-NULL'
 
   - name: top_requesters
     title: Top 20 requesters by tickets submitted
