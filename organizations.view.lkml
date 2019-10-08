@@ -1,10 +1,16 @@
 view: organizations {
-  sql_table_name: looker_zendesk.organizations ;;
+  sql_table_name: zendesk.organizations ;;
 
   dimension: id {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+  }
+
+  dimension_group: updated {
+    type: time
+    timeframes: [time, date, week, month]
+    sql: ${TABLE}.updated_at ;;
   }
 
   dimension_group: created {
@@ -38,8 +44,18 @@ view: organizations {
     sql: ${TABLE}.shared_tickets ;;
   }
 
+  dimension: url {
+    type: string
+    sql: ${TABLE}.url ;;
+  }
+
+  dimension: group_id {
+    type: yesno
+    sql: ${TABLE}.group_id ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [id, name]
+    drill_fields: [id]
   }
 }

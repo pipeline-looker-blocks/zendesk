@@ -1,5 +1,5 @@
 view: groups {
-  sql_table_name: looker_zendesk.zendesk_groups ;;
+  sql_table_name: zendesk.groups ;;
 
   dimension: id {
     primary_key: yes
@@ -13,9 +13,10 @@ view: groups {
     sql: ${TABLE}.created_at ;;
   }
 
-  #   - dimension: deleted
-  #     type: yesno
-  #     sql: ${TABLE}.deleted
+  dimension: deleted {
+      type: yesno
+      sql: ${TABLE}.deleted ;;
+  }
 
   dimension: name {
     type: string

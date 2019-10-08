@@ -1,5 +1,5 @@
 view: tickets {
-  sql_table_name: looker_zendesk.tickets ;;
+  sql_table_name: zendesk.tickets ;;
 
   dimension: id {
     primary_key: yes
@@ -189,7 +189,7 @@ view: tickets {
     sql: ${organizations.name} ;;
 
     filters: {
-      field: organization_name
+      field: organizations.name
       value: "-NULL"
     }
   }
